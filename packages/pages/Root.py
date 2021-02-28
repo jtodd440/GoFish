@@ -3,14 +3,13 @@ from tkinter import filedialog
 import gpxpy
 import pandas as pd
 import os
+from data.data_sets import *
 from .constants import *
 
 class Root(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         
-        self.data_sets = {}
-
         navigation_frame = tk.Frame(self, background = "grey")
         navigation_frame.pack(side = "top")
         navigation_label = tk.Label(
@@ -120,7 +119,7 @@ class Root(tk.Frame):
     def update_environment_objects(self):
         new_label = tk.Label(
         self.env_objects_frame,
-        text = f"{list(self.data_sets.keys())[len(self.data_sets.keys()) - 1]}",
+        text = f"{list(data_sets.keys())[len(data_sets.keys()) - 1]}",
         bg = "grey",
         fg = "black"
         )
@@ -143,5 +142,5 @@ def import_button_function(self):
         df = pd.DataFrame(pd.read_csv(f))
     
     f = os.path.basename(os.path.normpath(f))
-    self.data_sets[f"{f}"] = df
+    add_data_set(f, df)
     self.update_environment_objects()
