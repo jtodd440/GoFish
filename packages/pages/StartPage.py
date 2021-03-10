@@ -17,7 +17,7 @@ class StartPage(tk.Frame):
 
         label = tk.Label(
             self,
-            text = "FishBricks",
+            text = "Data App",
             font = LARGE_FONT,
             fg = "black"
         )
