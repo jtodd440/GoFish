@@ -1,6 +1,6 @@
 import tkinter as tk
-from data.data_sets import data_sets
-from packages.submodules.Plot import Plot
+from Data.data_sets import data_sets
+from Objects.Plots.PlotTypes.Plot import Plot
 
 class StatObject(tk.Frame):
     def __init__(self, parent):

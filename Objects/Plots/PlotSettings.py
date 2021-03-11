@@ -1,6 +1,6 @@
 import tkinter as tk
-from data.data_sets import data_sets
-from packages.submodules.plot_types.Geo import GeoPlot
+from Data.data_sets import data_sets
+from Objects.Plots.PlotTypes.Geo import GeoPlot
 
 class PlotSettings(tk.Frame):
     def __init__(self, parent):

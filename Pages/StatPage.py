@@ -1,6 +1,6 @@
 import tkinter as tk
-from packages.submodules.StatObject import StatObject
-from .constants import *
+from Objects.Stats.StatObject import StatObject
+from Misc.constants import *
 
 class StatPage(tk.Frame):
     def __init__(self, parent, controller):

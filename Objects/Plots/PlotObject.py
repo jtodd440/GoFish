@@ -1,7 +1,7 @@
 import tkinter as tk
-from data.data_sets import data_sets
-from packages.submodules.Plot import Plot
-from packages.submodules.PlotSettings import PlotSettings
+from Data.data_sets import data_sets
+from Objects.Plots.PlotTypes.Plot import Plot
+from Objects.Plots.PlotSettings import PlotSettings
 
 class PlotObject(tk.Frame):
     def __init__(self, parent):

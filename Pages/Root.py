@@ -3,8 +3,8 @@ from tkinter import filedialog
 import gpxpy
 import pandas as pd
 import os
-from data.data_sets import *
-from .constants import *
+from Data.data_sets import *
+from Misc.constants import *
 
 class Root(tk.Frame):
     def __init__(self, parent, controller):

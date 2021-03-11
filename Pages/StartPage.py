@@ -1,6 +1,6 @@
 #from PIL import Image, ImageTks
 import tkinter as tk
-from .constants import *
+from Misc.constants import *
 
 
 class StartPage(tk.Frame):
