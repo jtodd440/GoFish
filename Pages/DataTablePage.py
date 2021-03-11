@@ -1,6 +1,6 @@
 import tkinter as tk
 import pandas as pd
-from packages.submodules.Table import Table
+from Objects.Table import Table
 
 class DataTablePage(tk.Canvas):
     def __init__(self, parent):

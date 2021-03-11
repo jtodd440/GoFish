@@ -1,5 +1,5 @@
 import tkinter as tk
-from .constants import *
+from Misc.constants import *
 
 class ScriptingPage(tk.Frame):
     def __init__(self, parent, controller):

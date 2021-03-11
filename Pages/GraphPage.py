@@ -1,7 +1,7 @@
 import tkinter as tk
-from .constants import *
-from packages.submodules.Plot import Plot
-from packages.submodules.PlotObject import PlotObject
+from Misc.constants import *
+from Objects.Plots.PlotTypes.Plot import Plot
+from Objects.Plots.PlotObject import PlotObject
 
 class GraphPage(tk.Frame):
     def __init__(self, parent, controller):

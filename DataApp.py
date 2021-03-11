@@ -1,10 +1,10 @@
 import tkinter as tk
-from packages.pages.DataPage import *
-from packages.pages.GraphPage import *
-from packages.pages.Root import *
-from packages.pages.ScriptingPage import *
-from packages.pages.StatPage import *
-from packages.pages.StartPage import *
+from Pages.DataPage import *
+from Pages.GraphPage import *
+from Pages.Root import *
+from Pages.ScriptingPage import *
+from Pages.StatPage import *
+from Pages.StartPage import *
 
 pages = (
     StartPage,

@@ -6,7 +6,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.figure import Figure
 from matplotlib import style
 style.use("ggplot")
-from data.data_sets import data_sets
+from Data.data_sets import data_sets
 
 class GeoPlot(tk.Frame):
     def __init__(self, parent):

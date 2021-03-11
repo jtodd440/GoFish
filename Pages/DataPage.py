@@ -1,10 +1,10 @@
 import tkinter as tk
 import pandas as pd
-from data.data_sets import data_sets
-from packages.submodules.Table import Table
-from packages.pages.DataTablePage import DataTablePage
-from packages.pages.DataChartPage import DataChartPage
-from .constants import *
+from Data.data_sets import data_sets
+from Objects.Table import Table
+from Pages.DataTablePage import DataTablePage
+from Pages.DataChartPage import DataChartPage
+from Misc.constants import *
 
 class DataPage(tk.Frame):
     def __init__(self, parent, controller):
