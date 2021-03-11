@@ -10,17 +10,21 @@ class Table(tk.Frame):
             for j in range(self.columns):
                 if i == 0:
                     text = df.columns.values.tolist()[j]
+                    font=('Arial',16,'bold')
+                    background = "grey"
                 else:
                     text = df.iloc[i, j]
+                    font=('Arial',16)
+                    background = "white"
                 
                 self.e = tk.Entry(
                     self,
                     borderwidth=20,
                     highlightcolor = "white",
                     relief = "flat",
-                    fg='black',
-                    bg = "white",
-                    font=('Arial',16,'bold'),
+                    fg ='black',
+                    bg = background,
+                    font = font,
                     text = text
                     ) 
                 self.e.grid(row = i, column = j)

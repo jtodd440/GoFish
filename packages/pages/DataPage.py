@@ -18,6 +18,18 @@ class DataPage(tk.Frame):
         )
         back_btn.grid(row = 0, column = 0)
 
+        self.DataSelected = tk.StringVar(self)
+        self.DataSelected.set("select data")
+        self.DataSets = [ds for ds in list(data_sets.keys())]
+
+        self.DataOptionMenu = tk.OptionMenu(
+            self,
+            self.DataSelected,
+            "-- select data --",
+            *self.DataSets
+        )
+        self.DataOptionMenu.grid(row = 1, column = 0)
+
         self.TableViewBtn = tk.Button(
             self,
             text = "Table View",
@@ -25,7 +37,7 @@ class DataPage(tk.Frame):
             fg = "black",
             command = lambda: self.raise_table_page()
         )
-        self.TableViewBtn.grid(row = 0, column = 1)
+        self.TableViewBtn.grid(row = 2, column = 0)
 
         self.ChartViewBtn = tk.Button(
             self,
@@ -34,26 +46,29 @@ class DataPage(tk.Frame):
             fg = "black",
             command = lambda: self.raise_chart_page()
         )
-        self.ChartViewBtn.grid(row = 0, column = 1)
+        self.ChartViewBtn.grid(row = 2, column = 0)
 
         self.ChartPage = DataChartPage(
             self
         )
-        self.ChartPage.grid(row = 1, column = 3)
 
         self.TablePage = DataTablePage(
             self
         )
-        self.TablePage.grid(row = 1, column = 3)
+        self.TablePage.grid(row = 5, column = 1)
 
     def raise_chart_page(self):
-        self.TablePage.grid_forget()
-        self.ChartPage.grid(row = 1, column = 3)
-        self.TableViewBtn.lift()
+        try:
+            self.TablePage.grid_forget()
+            self.ChartPage.grid(row = 5, column = 1)
+            self.TableViewBtn.lift()
+        except:
+            self.ChartPage.grid(row = 5, column = 1)
+            self.TableViewBtn.lift()
 
     def raise_table_page(self):
         self.ChartPage.grid_forget()
-        self.TablePage.grid(row = 1, column = 3)
+        self.TablePage.grid(row = 5, column = 1)
         self.ChartViewBtn.lift()
         
         
