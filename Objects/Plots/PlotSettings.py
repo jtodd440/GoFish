@@ -21,15 +21,22 @@ class PlotSettings(tk.Frame):
         )
 
         self.data_selected.trace("r", self.update_data_dropdown)
-        self.data_selected.trace("w", self.get_data_selection)
         
+        self.ParametersFrameLabel = tk.Label(
+            self,
+            text = "Parameters",
+            fg = "black",
+            bg = "grey"
+        )
+        self.ParametersFrameLabel.grid(row = 3, column = 1, sticky = "nw", pady = 10)
+
         self.ParametersFrame = tk.Frame(
             self,
             bg = "white",
             width = 100,
             height = 100,
         )
-        self.ParametersFrame.grid(row = 3, column = 1, pady = 10)
+        self.ParametersFrame.grid(row = 4, column = 1, pady = 10)
 
         self.graph_types = [gt for gt in list(Types.keys())]
         self.TypeSelected = tk.StringVar(self)
@@ -40,31 +47,27 @@ class PlotSettings(tk.Frame):
             self.TypeSelected,
             *self.graph_types,
         )
-        self.TypeSelected.trace("w", self.update_params)
+        self.TypeSelected.trace("r", self.update_params)
         
         self.plot_btn = tk.Button(
             self,
             text = "Plot",
             fg = "black",
             bg = "grey",
-            command = lambda: self.show_plot(self.parent)
+            command = lambda: self.show_plot()
         )
         
         self.data_drop_down.grid(row = 1, column = 1)
         self.PlotTypeDropDown.grid(row = 2, column = 1)
-        self.plot_btn.grid(row = 4, column = 1)
+        self.plot_btn.grid(row = 5, column = 1)
 
     def show_plot(self):
         try:
-            parent.Plot.pack_forget()
-            parent.Plot = ScatterPlot(self.parent.PlotFrame)
-            parent.Plot.show()
-            parent.Plot.pack()
-
+            self.Plot.show_plot()
         except:
-            parent.Plot = ScatterPlot(self.parent.PlotFrame)
-            parent.Plot.show()
-            parent.Plot.pack()
+            data = self.data_selected.get()
+            self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame)
+            self.Plot.show_plot()
 
     def update_data_dropdown(self, *args):
         data_drop_down_items = []
@@ -79,27 +82,15 @@ class PlotSettings(tk.Frame):
                     label = ds,
                     command = lambda: tk._setit(self.data_selected, ds)
                     )
-    
-    def get_data_selection(self, *args):
-        #self.data_selected.set(self.data_drop_down.get())
-        x = 1
 
     def update_params(self, *args):
-        label = tk.Label(
-            self.ParametersFrame,
-            text = "HI",
-            fg = "black"
-        )
-        label.pack()
-        # data = data_sets[self.data_selected.get()]
-        # Plot = ScatterPlot(self.parent.PlotFrame, data)
-        # ParamObjects = list(Plot.Parameters.keys())
-        # ParamArgs = dict(Plot.Parameters.values())
-        # print("hi")
-        # for i in range(len(ParamObjects)):
-        #     obj = ParamObjects[i](
-        #         self.ParametersFrame,
-        #         **ParamArgs
-        #     )
-        #     obj.grid(row = i, column = 0)
+        try: 
+            self.Plot.grid_forget()
+        
+        except:
+            pass
+
+        data = self.data_selected.get()
+        self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame)
+        self.Plot.show_params()
             
