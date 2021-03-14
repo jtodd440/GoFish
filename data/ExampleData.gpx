@@ -1,0 +1,950 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <wpt lat="43.752391352" lon="-70.075934008">
+    <time>2020-10-08T02:03:04Z</time>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>48a26e8b-d314-4e56-bce0-3f7e01c26a25</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.751626667" lon="-70.075303333">
+    <time>2020-10-08T02:03:08Z</time>
+    <desc>1</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>3ef7c0ea-36b1-4f19-99c2-968261640d77</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.743837288" lon="-70.071588772">
+    <time>2020-10-08T02:27:11Z</time>
+    <desc>7</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>5c8ca942-1864-42e3-89ff-fc35206a2d78</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.745928333" lon="-70.070355000">
+    <time>2020-10-08T02:45:30Z</time>
+    <desc>10</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>16a8e9f6-aa35-44f3-abe0-040c02821424</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="true" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.713351667" lon="-70.090841667">
+    <time>2020-10-08T03:11:33Z</time>
+    <desc>0</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>040ba496-621b-42c1-807a-d5a3055b6e68</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.724820000" lon="-70.099565000">
+    <time>2020-10-08T03:44:02Z</time>
+    <desc>3</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>0f8434fd-671a-444c-8d2c-f4895e0a586a</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.733091667" lon="-70.101320000">
+    <time>2020-10-08T04:03:11Z</time>
+    <desc>3</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>1134e32a-8d7c-48f4-abac-8de8066775f2</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.740361667" lon="-70.096118333">
+    <time>2020-10-08T04:19:47Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>40bee1a1-8577-4e5b-a0ec-b2a776f34c98</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.741221667" lon="-70.092568333">
+    <time>2020-10-08T04:36:08Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>58c5fa07-13e7-4994-93a1-f2873fa8b1f0</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.731693333" lon="-70.091788333">
+    <time>2020-10-08T04:54:33Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7898282f-0236-4468-b287-72c2099a2071</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.720958333" lon="-70.087838333">
+    <time>2020-10-08T05:18:55Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7a826d37-52f8-47ae-a666-b1433d434473</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.714330000" lon="-70.110080000">
+    <time>2020-10-08T05:55:19Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>4422e16f-45fa-4445-b948-08ae76121372</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="true" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.708461667" lon="-70.121226667">
+    <time>2020-10-08T06:13:35Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>36bb8b4d-ab89-478d-a2fe-cf3c04865fc5</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.698311667" lon="-70.083415000">
+    <time>2020-10-08T06:46:34Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>6ac25b6d-2cae-43d8-832c-67fa01ba4e06</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.699568333" lon="-70.082208333">
+    <time>2020-10-08T07:05:42Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7a2d92f5-6833-4528-b7e2-23d74fc07ddc</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.697331667" lon="-70.115290000">
+    <time>2020-10-08T08:46:58Z</time>
+    <desc>12</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7b57ab7a-b139-4a08-ab6c-1568380fc9fb</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.692850000" lon="-70.119560000">
+    <time>2020-10-08T09:03:45Z</time>
+    <desc>12</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>431c410e-e9a5-400c-a907-a3100a6da323</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.687305000" lon="-70.121813333">
+    <time>2020-10-08T09:26:22Z</time>
+    <desc>12</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>4490d5d7-2f3d-4147-bfe0-eb4f159bc4af</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.685796667" lon="-70.122648333">
+    <time>2020-10-08T09:45:14Z</time>
+    <desc>5</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>5bf87577-33ca-4ea2-be1d-1eaf53b19e7a</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.682223333" lon="-70.125303333">
+    <time>2020-10-08T10:03:33Z</time>
+    <desc>14</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7b802011-800a-45e8-80af-872f7ff9773c</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.680713333" lon="-70.129571667">
+    <time>2020-10-08T10:19:42Z</time>
+    <desc>4</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>4d0f39a1-b7df-40d3-92eb-ef75481c65a0</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.675596667" lon="-70.129973333">
+    <time>2020-10-08T10:42:33Z</time>
+    <desc>4</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>2371e00e-a4c5-4fb5-99f5-fbfe2bdbc282</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.668518333" lon="-70.133801667">
+    <time>2020-10-08T11:04:04Z</time>
+    <desc>6</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>6560f5e6-54a7-421f-9b3e-f318141e24a3</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.662033333" lon="-70.135141667">
+    <time>2020-10-08T11:19:05Z</time>
+    <desc>8</desc>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7e2732f2-0068-4c7b-83a5-3c310e5f7d1e</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.652385000" lon="-70.136906667">
+    <time>2020-10-08T11:37:19Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>33f7acc2-8741-4a7c-b2db-ec9b075aacdd</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.652041667" lon="-70.135788333">
+    <time>2020-10-08T11:52:45Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>567322ef-e1f8-4d60-a9e1-29dc763368e4</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.653600000" lon="-70.135826667">
+    <time>2020-10-08T12:06:19Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>2f014dbd-fe17-4203-8585-bc7f7c519d27</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.657428333" lon="-70.131331667">
+    <time>2020-10-08T12:20:00Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>3460a6d9-7075-4bb4-afd6-54d9096717e3</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.657160000" lon="-70.136145000">
+    <time>2020-10-08T12:35:38Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>2af33bcd-2102-4158-b6c9-98b01966a4a7</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.721345000" lon="-70.090836667">
+    <time>2020-10-08T13:22:55Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>00e1f38a-aecf-4187-aa1f-bd3a2d6a3102</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.712441667" lon="-70.093113333">
+    <time>2020-10-08T13:38:09Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>5a8c3fc4-54a3-45ff-8b75-67576113833a</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.707475000" lon="-70.088920000">
+    <time>2020-10-08T14:08:07Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>29332a59-dc26-410f-948a-72965f57b846</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <wpt lat="43.712116667" lon="-70.092530000">
+    <time>2020-10-08T14:17:17Z</time>
+    <sym>Sea-DepthB-Blue</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>1338723b-7747-47d5-9bcb-1dd473442d92</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+      <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+    </extensions>
+  </wpt>
+  <trk>
+    <extensions>
+      <opencpn:guid>4836774a-e724-4952-b654-7cdc5dc64698</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.752523333" lon="-70.074356667">
+        <time>2020-10-08T06:01:17Z</time>
+      </trkpt>
+      <trkpt lat="43.751535000" lon="-70.075463333">
+        <time>2020-10-08T06:02:39Z</time>
+      </trkpt>
+      <trkpt lat="43.751385000" lon="-70.076008333">
+        <time>2020-10-08T06:03:02Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>0959a1d1-1194-4364-ac5c-a6ea682e6c15</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.743513333" lon="-70.071806667">
+        <time>2020-10-08T06:25:56Z</time>
+      </trkpt>
+      <trkpt lat="43.743251667" lon="-70.072141667">
+        <time>2020-10-08T06:26:12Z</time>
+      </trkpt>
+      <trkpt lat="43.743178333" lon="-70.071930000">
+        <time>2020-10-08T06:26:21Z</time>
+      </trkpt>
+      <trkpt lat="43.744403333" lon="-70.071073333">
+        <time>2020-10-08T06:27:10Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>29bdbe92-7912-4c60-a44c-6ab750b74b40</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.746363333" lon="-70.070086667">
+        <time>2020-10-08T06:41:48Z</time>
+      </trkpt>
+      <trkpt lat="43.745310000" lon="-70.070810000">
+        <time>2020-10-08T06:43:12Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>51bcc27a-9a8e-47cb-b5ab-bb303131f756</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.712753333" lon="-70.090540000">
+        <time>2020-10-08T07:09:20Z</time>
+      </trkpt>
+      <trkpt lat="43.712580000" lon="-70.090545000">
+        <time>2020-10-08T07:09:28Z</time>
+      </trkpt>
+      <trkpt lat="43.712558333" lon="-70.090768333">
+        <time>2020-10-08T07:09:36Z</time>
+      </trkpt>
+      <trkpt lat="43.712905000" lon="-70.090920000">
+        <time>2020-10-08T07:10:00Z</time>
+      </trkpt>
+      <trkpt lat="43.713746667" lon="-70.090608333">
+        <time>2020-10-08T07:11:05Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>3d0498ca-d1d9-4b8b-8d4b-47ec5922847a</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.712715000" lon="-70.091190000">
+        <time>2020-10-08T07:12:07Z</time>
+      </trkpt>
+      <trkpt lat="43.712726667" lon="-70.091296667">
+        <time>2020-10-08T07:12:08Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>4569c3ec-a98d-4e51-99f3-43447941aead</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.725421667" lon="-70.098961667">
+        <time>2020-10-08T07:42:36Z</time>
+      </trkpt>
+      <trkpt lat="43.724256667" lon="-70.099933333">
+        <time>2020-10-08T07:44:01Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>2fd6ef0b-8137-4de6-b889-6c0464003f4d</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.733550000" lon="-70.101151667">
+        <time>2020-10-08T08:01:57Z</time>
+      </trkpt>
+      <trkpt lat="43.733706667" lon="-70.101105000">
+        <time>2020-10-08T08:02:05Z</time>
+      </trkpt>
+      <trkpt lat="43.733593333" lon="-70.100873333">
+        <time>2020-10-08T08:02:21Z</time>
+      </trkpt>
+      <trkpt lat="43.732485000" lon="-70.101846667">
+        <time>2020-10-08T08:03:09Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>3c00ee25-e398-43e2-838d-42332debe74e</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.740065000" lon="-70.096215000">
+        <time>2020-10-08T08:18:15Z</time>
+      </trkpt>
+      <trkpt lat="43.739925000" lon="-70.096520000">
+        <time>2020-10-08T08:18:39Z</time>
+      </trkpt>
+      <trkpt lat="43.740825000" lon="-70.095640000">
+        <time>2020-10-08T08:19:46Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>0c8b78c6-a731-49fb-b828-a7e278c9f8e3</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.741013333" lon="-70.092341667">
+        <time>2020-10-08T08:34:04Z</time>
+      </trkpt>
+      <trkpt lat="43.741750000" lon="-70.091936667">
+        <time>2020-10-08T08:34:28Z</time>
+      </trkpt>
+      <trkpt lat="43.741720000" lon="-70.092273333">
+        <time>2020-10-08T08:34:44Z</time>
+      </trkpt>
+      <trkpt lat="43.740646667" lon="-70.092901667">
+        <time>2020-10-08T08:36:07Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>26dc4ef9-8070-4c20-8564-c0026447ef30</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.731948333" lon="-70.091530000">
+        <time>2020-10-08T08:53:41Z</time>
+      </trkpt>
+      <trkpt lat="43.731305000" lon="-70.092116667">
+        <time>2020-10-08T08:54:32Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>3a1fa34a-256a-411b-8dcc-ab15030d83e1</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.720671667" lon="-70.088198333">
+        <time>2020-10-08T09:17:56Z</time>
+      </trkpt>
+      <trkpt lat="43.721226667" lon="-70.087491667">
+        <time>2020-10-08T09:18:54Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>042196fc-a3cb-49d7-9624-85f80ddb2315</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.714825000" lon="-70.109753333">
+        <time>2020-10-08T09:53:45Z</time>
+      </trkpt>
+      <trkpt lat="43.713630000" lon="-70.110478333">
+        <time>2020-10-08T09:55:17Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>67eee087-7b70-4f57-84a0-007368b99fe1</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.709053333" lon="-70.120415000">
+        <time>2020-10-08T10:12:38Z</time>
+      </trkpt>
+      <trkpt lat="43.709206667" lon="-70.120393333">
+        <time>2020-10-08T10:12:54Z</time>
+      </trkpt>
+      <trkpt lat="43.708091667" lon="-70.121765000">
+        <time>2020-10-08T10:13:33Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>6087f5e5-1db7-43f6-a851-26c96228c117</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.697750000" lon="-70.084015000">
+        <time>2020-10-08T10:44:54Z</time>
+      </trkpt>
+      <trkpt lat="43.699026667" lon="-70.082618333">
+        <time>2020-10-08T10:46:33Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>406db8ba-d309-4139-bd4d-13f7560bdb3a</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.698961667" lon="-70.082805000">
+        <time>2020-10-08T11:04:11Z</time>
+      </trkpt>
+      <trkpt lat="43.700165000" lon="-70.081680000">
+        <time>2020-10-08T11:05:40Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>7e6e8758-03c7-4c09-a0ec-bf5265d1c9f0</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.697753333" lon="-70.114838333">
+        <time>2020-10-08T12:45:35Z</time>
+      </trkpt>
+      <trkpt lat="43.696706667" lon="-70.115860000">
+        <time>2020-10-08T12:46:57Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>29ad9d7c-2630-4607-8290-426c15c61a64</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.693643333" lon="-70.118781667">
+        <time>2020-10-08T13:01:59Z</time>
+      </trkpt>
+      <trkpt lat="43.692988333" lon="-70.119045000">
+        <time>2020-10-08T13:02:39Z</time>
+      </trkpt>
+      <trkpt lat="43.692255000" lon="-70.120053333">
+        <time>2020-10-08T13:03:44Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>5bd5b3d6-98bc-43e1-b49c-6fea4ad1e161</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.687788333" lon="-70.121288333">
+        <time>2020-10-08T13:25:06Z</time>
+      </trkpt>
+      <trkpt lat="43.686695000" lon="-70.122243333">
+        <time>2020-10-08T13:26:20Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>26a88a81-00b8-4b57-a027-f15d118b17cb</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.686105000" lon="-70.122333333">
+        <time>2020-10-08T13:44:29Z</time>
+      </trkpt>
+      <trkpt lat="43.685468333" lon="-70.122868333">
+        <time>2020-10-08T13:45:09Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>12080fab-c1bf-4c3e-9b5a-10204821feb2</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.683051667" lon="-70.124931667">
+        <time>2020-10-08T14:01:52Z</time>
+      </trkpt>
+      <trkpt lat="43.682940000" lon="-70.124703333">
+        <time>2020-10-08T14:02:08Z</time>
+      </trkpt>
+      <trkpt lat="43.681608333" lon="-70.125830000">
+        <time>2020-10-08T14:03:31Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>47e01ea7-727e-4b2a-9c73-c6813eded127</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.681263333" lon="-70.129181667">
+        <time>2020-10-08T14:18:26Z</time>
+      </trkpt>
+      <trkpt lat="43.680368333" lon="-70.129788333">
+        <time>2020-10-08T14:19:30Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>0b2d30c1-8bd7-4cae-b3cf-848c06135474</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.675866667" lon="-70.129816667">
+        <time>2020-10-08T14:41:54Z</time>
+      </trkpt>
+      <trkpt lat="43.675198333" lon="-70.130336667">
+        <time>2020-10-08T14:42:31Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>5920303d-8794-4c05-a5a8-06c63414d29b</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.666861667" lon="-70.134413333">
+        <time>2020-10-08T15:02:20Z</time>
+      </trkpt>
+      <trkpt lat="43.667481667" lon="-70.134578333">
+        <time>2020-10-08T15:02:44Z</time>
+      </trkpt>
+      <trkpt lat="43.669455000" lon="-70.133190000">
+        <time>2020-10-08T15:04:02Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>5b131dff-a0ac-4f2c-8c2c-7bda602ab3f4</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.662393333" lon="-70.134913333">
+        <time>2020-10-08T15:17:51Z</time>
+      </trkpt>
+      <trkpt lat="43.661231667" lon="-70.135568333">
+        <time>2020-10-08T15:19:04Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>4d78917f-3830-4476-8dbf-807b392981a8</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.651878333" lon="-70.137341667">
+        <time>2020-10-08T15:36:43Z</time>
+      </trkpt>
+      <trkpt lat="43.652761667" lon="-70.136573333">
+        <time>2020-10-08T15:37:17Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>0d31d123-dfb4-46f1-9080-661e4e853de4</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.652945000" lon="-70.135706667">
+        <time>2020-10-08T15:50:51Z</time>
+      </trkpt>
+      <trkpt lat="43.652638333" lon="-70.135503333">
+        <time>2020-10-08T15:51:07Z</time>
+      </trkpt>
+      <trkpt lat="43.651195000" lon="-70.136245000">
+        <time>2020-10-08T15:52:44Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>43c6efc4-660d-4926-a29e-7d9c37d84303</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.654551667" lon="-70.135250000">
+        <time>2020-10-08T16:04:18Z</time>
+      </trkpt>
+      <trkpt lat="43.654600000" lon="-70.135035000">
+        <time>2020-10-08T16:04:34Z</time>
+      </trkpt>
+      <trkpt lat="43.652991667" lon="-70.136183333">
+        <time>2020-10-08T16:06:17Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>30a0cbdb-a91b-4759-bb88-3e4a26178c22</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.653991667" lon="-70.134528333">
+        <time>2020-10-08T16:07:45Z</time>
+      </trkpt>
+      <trkpt lat="43.653995000" lon="-70.134471667">
+        <time>2020-10-08T16:07:46Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>04991894-a467-4939-b586-46992fa69169</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.658036667" lon="-70.130955000">
+        <time>2020-10-08T16:18:38Z</time>
+      </trkpt>
+      <trkpt lat="43.656856667" lon="-70.131683333">
+        <time>2020-10-08T16:19:57Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>3a602896-d275-427e-92d0-64824c5a70d2</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.657936667" lon="-70.135616667">
+        <time>2020-10-08T16:33:41Z</time>
+      </trkpt>
+      <trkpt lat="43.656960000" lon="-70.136278333">
+        <time>2020-10-08T16:34:53Z</time>
+      </trkpt>
+      <trkpt lat="43.656660000" lon="-70.137183333">
+        <time>2020-10-08T16:35:37Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>2977a351-d6fa-4efc-9c7b-6836091cf76a</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.722116667" lon="-70.089443333">
+        <time>2020-10-08T17:20:41Z</time>
+      </trkpt>
+      <trkpt lat="43.720481667" lon="-70.092268333">
+        <time>2020-10-08T17:22:53Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>7ae3bcd5-1215-4da2-aae4-f0201ea55bc0</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.711783333" lon="-70.092926667">
+        <time>2020-10-08T17:37:12Z</time>
+      </trkpt>
+      <trkpt lat="43.711726667" lon="-70.093170000">
+        <time>2020-10-08T17:37:28Z</time>
+      </trkpt>
+      <trkpt lat="43.713026667" lon="-70.093063333">
+        <time>2020-10-08T17:38:07Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>1fe242c7-0008-44f3-92d6-73f0776aa1fc</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.706765000" lon="-70.089086667">
+        <time>2020-10-08T18:06:38Z</time>
+      </trkpt>
+      <trkpt lat="43.707143333" lon="-70.089185000">
+        <time>2020-10-08T18:07:02Z</time>
+      </trkpt>
+      <trkpt lat="43.707838333" lon="-70.088326667">
+        <time>2020-10-08T18:08:05Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <extensions>
+      <opencpn:guid>551d7703-2fd1-4984-9f42-872605451947</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <trkseg>
+      <trkpt lat="43.711563333" lon="-70.092610000">
+        <time>2020-10-08T18:16:32Z</time>
+      </trkpt>
+      <trkpt lat="43.712618333" lon="-70.092460000">
+        <time>2020-10-08T18:17:15Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

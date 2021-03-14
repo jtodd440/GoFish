@@ -16,11 +16,6 @@ class PlotObject(tk.Frame):
         
         self.delete_plot_btn.grid(row = 0, column = 0, sticky = "nw")
 
-        self.Settings = PlotSettings(
-            self
-        )
-        self.Settings.grid(row = 1, column = 0, padx = 10, sticky = "nw")
-
         self.PlotFrame = tk.Frame(
             self,
             width = 500,
@@ -28,6 +23,11 @@ class PlotObject(tk.Frame):
             bg = "blue"
         )
         self.PlotFrame.grid(row = 1, column = 1)
+
+        self.Settings = PlotSettings(
+            self
+        )
+        self.Settings.grid(row = 1, column = 0, padx = 10, sticky = "nw")
 
     def delete_plot(self):
         self.grid_forget()
