@@ -1,18 +1,20 @@
 import tkinter as tk
 import pandas as pd
 from Objects.Table import Table
+from Misc.constants import *
 
 class DataTablePage(tk.Canvas):
     def __init__(self, parent):
         tk.Canvas.__init__(self, parent)
 
-        TempDf = pd.DataFrame(columns = ["x", "y"])
-        x = [i for i in range(10)]
-        y = [i**2 for i in x]
-        TempDf["x"], TempDf["y"] = x, y
+        self.TempDf = pd.DataFrame(columns = ["x", "y"])
+        self.x = [i for i in range(10)]
+        self.y = [i**2 for i in self.x]
+        self.TempDf["x"], self.TempDf["y"] = self.x, self.y
 
-        DataTable = Table(
+        self.DataTable = Table(
             self,
-            TempDf
+            self.TempDf
         )
-        DataTable.grid(row =3, column = 3)
+
+        self.DataTable.grid(row =3, column = 3)

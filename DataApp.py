@@ -1,42 +1,45 @@
 import tkinter as tk
-from Pages.DataPage import *
-from Pages.GraphPage import *
-from Pages.Root import *
-from Pages.ScriptingPage import *
-from Pages.StatPage import *
-from Pages.StartPage import *
-
-pages = (
-    StartPage,
-    Root,
-    GraphPage,
-    StatPage,
-    DataPage,
-    ScriptingPage)
+from Pages.DataPage import DataPage
+from Pages.GraphPage import GraphPage
+from Pages.Root import Root
+from Pages.ScriptingPage import ScriptingPage
+from Pages.StatPage import StatPage
+from Pages.StartPage import StartPage
+from Misc.constants import *
 
 class DataApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
-        tk.Tk.wm_title(self, "Data App")
+        tk.Tk.wm_title(self, APP_NAME)
 
-        container = tk.Frame(self)
-        container.pack(side = "top", fill = "both", expand = True)
-        container.grid_rowconfigure(0, weight = 1)
-        container.grid_columnconfigure(0, weight = 1)
+        self.pages = (
+            StartPage,
+            Root,
+            GraphPage,
+            StatPage,
+            DataPage,
+            ScriptingPage
+            )
+
+        self.Container = tk.Frame(self)
+        self.Container.pack(side = "top", fill = "both", expand = True)
+        self.Container.grid_rowconfigure(0, weight = 1)
+        self.Container.grid_columnconfigure(0, weight = 1)
 
         self.frames = {}
 
-        for F in pages:
-            frame = F(container, self)
+        for F in self.pages:
+            frame = F(self.Container, self)
             self.frames[F] = frame
             frame.grid(row = 0, column = 0, sticky = "nsew")
 
         self.show_frame("StartPage")
 
-    def show_frame(self, cont):
-        raise_page = cont
+    def show_frame(self, page_name):
+        raise_page = page_name
+
         for page in self.frames:
-            if page.__name__ == cont:
+            if page.__name__ == page_name:
                 raise_page = page
                 
         frame = self.frames[raise_page]

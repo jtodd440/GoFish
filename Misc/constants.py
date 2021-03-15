@@ -1,3 +1,5 @@
+APP_NAME = "Data App"
+
 BASE_FONT = "Verdana"
 LARGE_FONT = (BASE_FONT, 40)
 BUTTON_FONT = (BASE_FONT, 16)
