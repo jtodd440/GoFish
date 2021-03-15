@@ -9,26 +9,25 @@ from Misc.constants import *
 class DataPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        back_btn = tk.Button(
+        
+        self.BackBtn = tk.Button(
             self,
             fg = "black",
             text = "<- Back",
             bg = "grey",
             command = lambda: controller.show_frame("Root")
         )
-        back_btn.grid(row = 0, column = 0)
 
-        self.DataSelected = tk.StringVar(self)
-        self.DataSelected.set("select data")
-        self.DataSets = [ds for ds in list(data_sets.keys())]
-
+        self.DataChoice = tk.StringVar(self)
+        self.DataChoice.set("select data")
+        self.DataOptions = [ds for ds in list(data_sets.keys())]
+        
         self.DataOptionMenu = tk.OptionMenu(
             self,
-            self.DataSelected,
+            self.DataChoice,
             "-- select data --",
-            *self.DataSets
+            *self.DataOptions
         )
-        self.DataOptionMenu.grid(row = 1, column = 0)
 
         self.TableViewBtn = tk.Button(
             self,
@@ -37,7 +36,6 @@ class DataPage(tk.Frame):
             fg = "black",
             command = lambda: self.raise_table_page()
         )
-        self.TableViewBtn.grid(row = 2, column = 0)
 
         self.ChartViewBtn = tk.Button(
             self,
@@ -46,15 +44,15 @@ class DataPage(tk.Frame):
             fg = "black",
             command = lambda: self.raise_chart_page()
         )
+
+        self.ChartPage = DataChartPage(self)
+
+        self.TablePage = DataTablePage(self)
+        
+        self.BackBtn.grid(row = 0, column = 0)
+        self.DataOptionMenu.grid(row = 1, column = 0)
+        self.TableViewBtn.grid(row = 2, column = 0)
         self.ChartViewBtn.grid(row = 2, column = 0)
-
-        self.ChartPage = DataChartPage(
-            self
-        )
-
-        self.TablePage = DataTablePage(
-            self
-        )
         self.TablePage.grid(row = 5, column = 1)
 
     def raise_chart_page(self):
