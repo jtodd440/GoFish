@@ -7,9 +7,32 @@ from Misc.constants import *
 
 class PlotSettings(tk.Frame):
     def __init__(self, parent):
-        tk.Frame.__init__(self, parent, bg = "grey")
+        tk.Frame.__init__(self, parent, bg = "grey", highlightbackground = "black", highlightthickness = 3)
         
         self.parent = parent
+
+        self.TitleLabelFrame = tk.Frame(
+            self,
+            bg = "gray30"
+        )
+
+        self.TitleLabel = tk.Label(
+            self.TitleLabelFrame,
+            text = "Plot Settings",
+            fg = "black",
+            bg = "grey30",
+            font = ("ariel", 20, "bold")
+        )
+
+        self.TitleLabel.pack(side = "top")
+        
+        self.DataOptionLabel = tk.Label(
+            self,
+            text = "Data",
+            fg = "black",
+            bg = "grey",
+            font = LABEL_FONT
+        )
 
         self.DataChoice = tk.StringVar(self)
         self.DataChoice.set("select data")
@@ -24,6 +47,14 @@ class PlotSettings(tk.Frame):
             *self.data_options
         )
 
+        self.GraphTypeLabel = tk.Label(
+            self,
+            text = "Plot Type",
+            fg = "black",
+            bg = "grey",
+            font = LABEL_FONT
+        )
+
         self.graph_type_options = [gt for gt in list(Types.keys())]
 
         self.GraphTypeChoice = tk.StringVar(self)
@@ -33,36 +64,48 @@ class PlotSettings(tk.Frame):
         self.GraphTypeOptionMenu = tk.OptionMenu(
             self,
             self.GraphTypeChoice,
-            *self.graph_type_options,
+            *self.graph_type_options
         )
 
-        self.ParametersFrameLabel = tk.Label(
-            self,
-            text = "Parameters",
-            fg = "black",
-            bg = "grey"
+        self.ParametersFrameContainer = tk.Frame(
+            self, 
+            bg = "LightSkyBlue4",
         )
 
         self.ParametersFrame = ScrollableFrame(
-            self,
+            self.ParametersFrameContainer,
             bg = "white",
             width = 100,
             height = 100,
         )
+
+        self.ParametersFrameLabel = tk.Label(
+            self.ParametersFrameContainer,
+            text = "Parameters",
+            fg = "black",
+            bg = "LightSkyBlue4",
+            font = LABEL_FONT
+        )
+        
+        self.ParametersFrameLabel.pack(side = "top", pady = 5)
+        self.ParametersFrame.pack(side = "top", padx = 3)
 
         self.ShowPlotBtn = tk.Button(
             self,
             text = "Plot",
             fg = "black",
             bg = "grey",
+            highlightbackground = "grey",
             command = lambda: self.show_plot()
         )
         
-        self.DataOptionMenu.grid(row = 1, column = 1)
-        self.GraphTypeOptionMenu.grid(row = 2, column = 1)
-        self.ParametersFrameLabel.grid(row = 3, column = 1, sticky = "nw", pady = 10)
-        self.ParametersFrame.grid(row = 4, column = 1, pady = 10)
-        self.ShowPlotBtn.grid(row = 5, column = 1)
+        self.TitleLabelFrame.grid(row = 0, column = 0, sticky = tk.NSEW)
+        self.DataOptionLabel.grid(row = 1, column = 0, padx = 10, sticky = tk.W, pady = 5)
+        self.DataOptionMenu.grid(row = 1, column = 0)
+        self.GraphTypeLabel.grid(row = 2, column = 0, padx = 10, sticky = tk.W, pady = 5)
+        self.GraphTypeOptionMenu.grid(row = 2, column = 0)
+        self.ParametersFrameContainer.grid(row = 4, column = 0, pady = 10)
+        self.ShowPlotBtn.grid(row = 5, column = 0, pady = 10)
 
     def show_plot(self):
         try:
