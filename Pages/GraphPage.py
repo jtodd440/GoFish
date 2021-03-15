@@ -29,7 +29,7 @@ class GraphPage(tk.Frame):
 
         self.PlotCanvas = ScrollableFrame(self)
 
-        self.InitialAddPlotBtn = tk.Button(
+        self.AddPlotBtn = tk.Button(
             self.PlotCanvas.ScrollFrame,
             text = "+",
             fg = "black",
@@ -39,7 +39,7 @@ class GraphPage(tk.Frame):
         self.TopBar.pack(side = "top", fill = "both")
         self.BackBtn.pack(side = "top", anchor = "nw")
         self.PlotCanvas.pack(side = "left", expand = tk.TRUE, fill = tk.BOTH)
-        self.InitialAddPlotBtn.grid(row = 0, column = 0)
+        self.AddPlotBtn.grid(row = 0, column = 0)
 
     def add_plot(self):
         try:
