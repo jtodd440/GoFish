@@ -1,6 +1,7 @@
 import tkinter as tk
 from Objects.Plots.PlotTypes.Plot import Plot
 from Objects.Plots.PlotObject import PlotObject
+from Objects.ScrollableFrame import ScrollableFrame
 from Misc.constants import *
 
 class GraphPage(tk.Frame):
@@ -9,38 +10,56 @@ class GraphPage(tk.Frame):
         
         self.parent = parent
         self.active_plots = 0
+        self.add_buttons = []
+
+        self.TopBar = tk.Frame(
+            self,
+            bg = "grey",
+            highlightbackground = "black",
+            highlightthickness = 3
+        )
 
         self.BackBtn = tk.Button(
-            self,
+            self.TopBar,
             fg = "black",
             text = "<- Back",
-            bg = "grey",
+            highlightbackground = "grey",
             command = lambda: controller.show_frame("Root")
         )
 
-        self.PlotCanvas = tk.Canvas(self, scrollregion = (0,0,500,500))
+        self.PlotCanvas = ScrollableFrame(self)
 
-        self.HBar = tk.Scrollbar(self, orient = "horizontal")
-
-        self.VBar = tk.Scrollbar(self, orient = "vertical")
-
-        self.AddPlotButton = tk.Button(
-            self.PlotCanvas,
+        self.InitialAddPlotBtn = tk.Button(
+            self.PlotCanvas.ScrollFrame,
             text = "+",
             fg = "black",
             command = lambda: self.add_plot()
         )
-
-        self.BackBtn.grid(row = 0, column = 0, sticky = "nw")
-        self.HBar.grid(row = 1, column = 0, columnspan = 2)
-        self.VBar.grid(column = 2, rowspan = 2)
-        self.AddPlotButton.grid(row = 0, column = 0)
+        
+        self.TopBar.pack(side = "top", fill = "both")
+        self.BackBtn.pack(side = "top", anchor = "nw")
+        self.PlotCanvas.pack(side = "left", expand = tk.TRUE, fill = tk.BOTH)
+        self.InitialAddPlotBtn.grid(row = 0, column = 0)
 
     def add_plot(self):
-        self.active_plots += 1
-        self.AddPlotButton.grid_forget()
-        self.NewPlot = PlotObject(self.PlotCanvas)
-        self.NewPlot.grid(row = self.active_plots, column = 0)
-        self.AddPlotButton.grid(row = self.active_plots + 1, column = 0)
+        try:
+            for btn in self.add_buttons:
+                btn.destroy()
         
+        except:
+            pass
+
+        self.NewPlot = PlotObject(self.PlotCanvas.ScrollFrame)
+        self.NewPlot.grid(row = self.active_plots, column = 0)
+        for i in range(2):
+            AddButton = tk.Button(
+                    self.PlotCanvas.ScrollFrame,
+                    text = "+",
+                    fg = "black",
+                    command = lambda: self.add_plot()
+                )
+            AddButton.grid(row = self.active_plots + 1 - i, column = i)
+            self.add_buttons.append(AddButton)
+
+        self.active_plots += 1        
         

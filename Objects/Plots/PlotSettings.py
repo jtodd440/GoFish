@@ -2,6 +2,8 @@ import tkinter as tk
 from Data.data_sets import data_sets
 from Objects.Plots.PlotTypes.Scatter import ScatterPlot
 from Objects.Plots.PlotTypes.PlotTypes import Types
+from Objects.ScrollableFrame import ScrollableFrame
+from Misc.constants import *
 
 class PlotSettings(tk.Frame):
     def __init__(self, parent):
@@ -22,11 +24,11 @@ class PlotSettings(tk.Frame):
             *self.data_options
         )
 
-        self.GraphTypeChoice = tk.StringVar(self)
-        self.GraphTypeChoice.set(self.graph_types[0])
-        self.GraphTypeChoice.trace("r", self.update_params)
-
         self.graph_type_options = [gt for gt in list(Types.keys())]
+
+        self.GraphTypeChoice = tk.StringVar(self)
+        self.GraphTypeChoice.set(self.graph_type_options[0])
+        self.GraphTypeChoice.trace("r", self.update_params)
 
         self.GraphTypeOptionMenu = tk.OptionMenu(
             self,
@@ -41,7 +43,7 @@ class PlotSettings(tk.Frame):
             bg = "grey"
         )
 
-        self.ParametersFrame = tk.Frame(
+        self.ParametersFrame = ScrollableFrame(
             self,
             bg = "white",
             width = 100,
@@ -67,7 +69,7 @@ class PlotSettings(tk.Frame):
             self.Plot.show_plot()
         except:
             data = self.DataChoice.get()
-            self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame)
+            self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame.ScrollFrame)
             self.Plot.show_plot()
 
     def update_data_dropdown(self, *args):
@@ -91,7 +93,8 @@ class PlotSettings(tk.Frame):
         except:
             pass
 
-        data = self.data_selected.get()
-        self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame)
+        data = self.DataChoice.get()
+        self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame.ScrollFrame)
         self.Plot.show_params()
+
             
