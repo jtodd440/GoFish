@@ -7,9 +7,15 @@ from Data.data_sets import data_sets
 class PlotObject(tk.Frame):
     def __init__(self, parent):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightcolor="black", highlightthickness=3)
+        self.parent = parent
+
+        self.TopBar = tk.Frame(
+            self,
+            bg = "grey",
+        )
 
         self.DeleteBtn = tk.Button(
-            self,
+            self.TopBar,
             text = "X",
             fg = "black",
             command = lambda: self.delete_plot()
@@ -24,12 +30,14 @@ class PlotObject(tk.Frame):
 
         self.Settings = PlotSettings(self)
         
+        self.TopBar.grid(row = 0, column = 0, columnspan = 2, sticky = tk.NSEW)
         self.DeleteBtn.grid(row = 0, column = 0, sticky = "nw")
         self.PlotFrame.grid(row = 1, column = 1)
         self.Settings.grid(row = 1, column = 0, padx = 10, sticky = "nw")
 
     def delete_plot(self):
         self.grid_forget()
+        self.destroy()
 
 
 

@@ -22,11 +22,11 @@ class PlotSettings(tk.Frame):
             *self.data_options
         )
 
-        self.GraphTypeChoice = tk.StringVar(self)
-        self.GraphTypeChoice.set(self.graph_types[0])
-        self.GraphTypeChoice.trace("r", self.update_params)
-
         self.graph_type_options = [gt for gt in list(Types.keys())]
+
+        self.GraphTypeChoice = tk.StringVar(self)
+        self.GraphTypeChoice.set(self.graph_type_options[0])
+        self.GraphTypeChoice.trace("r", self.update_params)
 
         self.GraphTypeOptionMenu = tk.OptionMenu(
             self,
@@ -91,7 +91,7 @@ class PlotSettings(tk.Frame):
         except:
             pass
 
-        data = self.data_selected.get()
+        data = self.DataChoice.get()
         self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame)
         self.Plot.show_params()
             
