@@ -1,11 +1,11 @@
 import tkinter as tk
 from Data.data_sets import data_sets
-from Objects.Plots.PlotTypes.Scatter import ScatterPlot
-from Objects.Plots.PlotTypes.PlotTypes import Types
+from Objects.Stats.StatTypes.MOC import Mean
+from Objects.Stats.StatTypes.StatTypes import Types
 from Objects.SpecialFrames.ScrollableFrame import ScrollableFrame
 from Misc.constants import *
 
-class PlotSettings(tk.Frame):
+class StatSettings(tk.Frame):
     def __init__(self, parent):
         tk.Frame.__init__(self, parent, bg = "grey", highlightbackground = "black", highlightthickness = 3)
         
@@ -47,7 +47,7 @@ class PlotSettings(tk.Frame):
             *self.data_options
         )
 
-        self.GraphTypeLabel = tk.Label(
+        self.StatTypeLabel = tk.Label(
             self,
             text = "Plot Type",
             fg = "black",
@@ -55,16 +55,16 @@ class PlotSettings(tk.Frame):
             font = LABEL_FONT
         )
 
-        self.graph_type_options = [gt for gt in list(Types.keys())]
+        self.stat_type_options = [st for st in list(Types.keys())]
 
-        self.GraphTypeChoice = tk.StringVar(self)
-        self.GraphTypeChoice.set(self.graph_type_options[0])
-        self.GraphTypeChoice.trace("r", self.update_params)
+        self.StatTypeChoice = tk.StringVar(self)
+        self.StatTypeChoice.set(self.stat_type_options[0])
+        self.StatTypeChoice.trace("r", self.update_params)
 
-        self.GraphTypeOptionMenu = tk.OptionMenu(
+        self.StatTypeOptionMenu = tk.OptionMenu(
             self,
-            self.GraphTypeChoice,
-            *self.graph_type_options
+            self.StatTypeChoice,
+            *self.stat_type_options
         )
 
         self.ParametersFrameContainer = tk.Frame(
@@ -90,34 +90,36 @@ class PlotSettings(tk.Frame):
         self.ParametersFrameLabel.pack(side = "top", pady = 5)
         self.ParametersFrame.pack(side = "top", padx = 3)
 
-        self.ShowPlotBtn = tk.Button(
+        self.ShowStatBtn = tk.Button(
             self,
-            text = "Plot",
+            text = "Result",
             fg = "black",
             bg = "grey",
             highlightbackground = "grey",
-            command = lambda: self.show_plot()
+            command = lambda: self.show_stat()
         )
         
         self.TitleLabelFrame.grid(row = 0, column = 0, sticky = tk.NSEW)
         self.DataOptionLabel.grid(row = 1, column = 0, padx = 10, sticky = tk.W, pady = 5)
         self.DataOptionMenu.grid(row = 1, column = 0)
-        self.GraphTypeLabel.grid(row = 2, column = 0, padx = 10, sticky = tk.W, pady = 5)
-        self.GraphTypeOptionMenu.grid(row = 2, column = 0)
+        self.StatTypeLabel.grid(row = 2, column = 0, padx = 10, sticky = tk.W, pady = 5)
+        self.StatTypeOptionMenu.grid(row = 2, column = 0)
         self.ParametersFrameContainer.grid(row = 4, column = 0, pady = 10)
-        self.ShowPlotBtn.grid(row = 5, column = 0, pady = 10)
+        self.ShowStatBtn.grid(row = 5, column = 0, pady = 10)
 
-    def show_plot(self):
+    def show_stat(self):
         try:
-            self.Plot.show_plot()
+            self.Stat.show_stat()
         except:
-            data = self.DataChoice.get()
-            self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame.ScrollFrame)
-            self.Plot.show_plot()
+            pass
+
+        data = self.DataChoice.get()
+        self.Stat = Mean(self.parent.StatFrame, self.ParametersFrame.ScrollFrame)
+        self.Stat.show_stat()
 
     def update_data_dropdown(self, *args):
         menu_options = []
-        menu = self.DataOption['menu']
+        menu = self.DataOptionMenu['menu']
         last_index = menu.index('end')
         for i in range(last_index + 1):
             menu_options.append(menu.entrycget(i, "label"))
@@ -131,13 +133,15 @@ class PlotSettings(tk.Frame):
 
     def update_params(self, *args):
         try: 
-            self.Plot.grid_forget()
+            self.Stat.grid_forget()
+            self.Stat.destroy()
         
         except:
             pass
 
         data = self.DataChoice.get()
-        self.Plot = ScatterPlot(self.parent.PlotFrame, data, self.ParametersFrame.ScrollFrame)
-        self.Plot.show_params()
+
+        self.Stat = Mean(self.parent.StatFrame, self.ParametersFrame.ScrollFrame)
+        self.Stat.show_params()
 
             
