@@ -2,7 +2,7 @@ import tkinter as tk
 from Data.data_sets import data_sets
 from Objects.Plots.PlotTypes.Scatter import ScatterPlot
 from Objects.Plots.PlotTypes.PlotTypes import Types
-from Objects.ScrollableFrame import ScrollableFrame
+from Objects.SpecialFrames.ScrollableFrame import ScrollableFrame
 from Misc.constants import *
 
 class PlotSettings(tk.Frame):

@@ -2,7 +2,7 @@ import tkinter as tk
 from Data.data_sets import data_sets
 from Objects.Stats.StatTypes.MOC import Mean
 from Objects.Stats.StatTypes.StatTypes import Types
-from Objects.ScrollableFrame import ScrollableFrame
+from Objects.SpecialFrames.ScrollableFrame import ScrollableFrame
 from Misc.constants import *
 
 class StatSettings(tk.Frame):

@@ -1,7 +1,7 @@
 import tkinter as tk
 from Objects.Plots.PlotTypes.Plot import Plot
 from Objects.Plots.PlotObject import PlotObject
-from Objects.ScrollableFrame import ScrollableFrame
+from Objects.SpecialFrames.ScrollableFrame import ScrollableFrame
 from Misc.constants import *
 
 class GraphPage(tk.Frame):

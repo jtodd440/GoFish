@@ -1,6 +1,6 @@
 import tkinter as tk
 from Objects.Stats.StatObject import StatObject
-from Objects.ScrollableFrame import ScrollableFrame
+from Objects.SpecialFrames.ScrollableFrame import ScrollableFrame
 from Misc.constants import *
 
 class StatPage(tk.Frame):
