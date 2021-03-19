@@ -16,45 +16,68 @@
 ############################################################################################################
 ############################################################################################################
 ### TitleFrame ###
-import tkinter as tk
-from Objects.SpecialFrames.TitleFrame import TitleFrame
+# import tkinter as tk
+# from Objects.SpecialFrames.TitleFrame import TitleFrame
 
-root = tk.Tk()
-f = TitleFrame(
-    root,
-    bg = "MediumPurple3")
+# root = tk.Tk()
+# f = TitleFrame(
+#     root,
+#     bg = "MediumPurple3")
 
-for i in range(5):
-    tk.Label(f.MainFrame, text = "Something", fg = "black").pack(side = "top")
+# for i in range(5):
+#     tk.Label(f.MainFrame, text = "Something", fg = "black").pack(side = "top")
 
-g = TitleFrame(f, title_text = "Scroll Region", bg = "grey30")
-g.add_scroll_region("pack", side = "top")
-g.pack(side = "top", padx = 5)
+# g = TitleFrame(f, title_text = "Scroll Region", bg = "grey30")
+# g.add_scroll_region("pack", side = "top")
+# labs = []
+# objs = []
+# for i in range(10):
+#     L = tk.Label(Group, text = "hi", fg = "black")
+#     O = tk.Button(Group, text = "hi", fg = "black")
+#     labs.append(L)
+#     objs.append(O)
+# g.pack(side = "top", padx = 5)
+
+# # f.pack()
+# # root.mainloop()
+
+# ### ObjectLabelAllignmentFrame + TitleFrame ###
+# from Objects.SpecialFrames.ObjectLabelAlignmentFrame import ObjectLabelAlignmentFrame
+# h = TitleFrame(f, title_text = "Group Region", bg = "grey30")
+
+# Group = ObjectLabelAlignmentFrame(h)
+
+# labs = []
+# objs = []
+# for i in range(3):
+#     L = tk.Label(Group, text = "hi", fg = "black")
+#     O = tk.Button(Group, text = "hi", fg = "black")
+#     labs.append(L)
+#     objs.append(O)
+
+# Group.add_pairs(labs, objs)
+# Group.show_pairs()
+# Group.pack(side = "top", pady = 5, padx = 5)
+
+# h.pack(side = "top", fill = tk.BOTH, padx = 5, pady = 5)
 
 # f.pack()
 # root.mainloop()
 
-### ObjectLabelAllignmentFrame + TitleFrame ###
-from Objects.SpecialFrames.ObjectLabelAlignmentFrame import ObjectLabelAlignmentFrame
-h = TitleFrame(f, title_text = "Group Region", bg = "grey30")
+# ############################################################################################################
+# import tkinter as tk
+# from Objects.Plots.NewPlotObject import PlotObject
 
-Group = ObjectLabelAlignmentFrame(h)
+# root = tk.Tk()
 
-labs = []
-objs = []
-for i in range(3):
-    L = tk.Label(Group, text = "hi", fg = "black")
-    O = tk.Button(Group, text = "hi", fg = "black")
-    labs.append(L)
-    objs.append(O)
+# Plot = PlotObject(
+#     root
+# )
 
-Group.add_pairs(labs, objs)
-Group.show_pairs()
-Group.pack(side = "top", pady = 5, padx = 5)
+# Plot.pack(side = tk.TOP)
 
-h.pack(side = "top", fill = tk.BOTH, padx = 5, pady = 5)
+# root.mainloop()
 
-f.pack()
-root.mainloop()
-
-############################################################################################################
+# tk.Frame(
+#     root,
+# )

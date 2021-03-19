@@ -12,7 +12,14 @@ class TitleFrame(tk.Frame):
         main_bg = "grey30",
         **kwargs):
         
-        tk.Frame.__init__(self, parent, **kwargs)
+        tk.Frame.__init__(
+            self,
+            parent,
+            highlightbackground = "black",
+            highlightcolor = "black",
+            highlightthickness = 2,
+            **kwargs
+        )
 
         self.TitleFrame = tk.Frame(
             self,
