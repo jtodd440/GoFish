@@ -44,12 +44,12 @@ class Root(tk.Frame):
             command = lambda: controller.show_frame("DataPage")
         )
 
-        self.ToScriptBtn = tk.Button(
+        self.ToGeoBtn = tk.Button(
             self.NavigationFrame,
-            text = "Write Scripts",
+            text = "Geo",
             fg = "black",
             font = BUTTON_FONT,
-            command = lambda: controller.show_frame("ScriptingPage")
+            command = lambda: controller.show_frame("GeoPage")
         )
 
         self.NavigationFrame.pack(side = "top")
@@ -57,7 +57,7 @@ class Root(tk.Frame):
         self.ToGraphBtn.pack(side = "left")
         self.ToStatBtn.pack(side = "left")
         self.ToDataBtn.pack(side = "left")
-        self.ToScriptBtn.pack(side = "left")
+        self.ToGeoBtn.pack(side = "left")
         
         self.MainFrame = tk.Frame(
             self,
