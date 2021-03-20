@@ -89,10 +89,10 @@ class Root(TitleFrame):
         )
 
         self.DataSetsFrame.add_scroll_region("pack", side = tk.TOP)
-        self.DataSetsFrame.pack(side = tk.TOP, padx = 5, pady = 5)
+        self.DataSetsFrame.grid(row = 0, column = 0, padx = 5, pady = 5)
         self.update_environment_objects()
         self.BaseMapsFrame.add_scroll_region("pack", side = tk.TOP)
-        self.BaseMapsFrame.pack(side = tk.TOP)
+        self.BaseMapsFrame.grid(row = 0, column = 1, padx = 5, pady = 5)
 
         self.NavigationFrame.grid(row = 0, column = 0, sticky = "nw")
         self.CommandFrame.grid(row = 0, column = 1, pady = 5, padx = 5, sticky = "nw")
