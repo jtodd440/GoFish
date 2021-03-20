@@ -86,19 +86,19 @@ class TableObject(InfoObject):
     def show_table(self, *args):
         try:
             self.FormatFrame.destroy()
-            self.NewTable.destroy()
         except:
             pass
-        
+
+
         data = self.DataChoice.get()
         if data != "select data":
             print("hi")
             data = data_sets[f"{data}"]
             self.NewTable = Table(
-                self.OutputFrame.ScrollFrame,
+                self.OutputFrame.ScrollFrame.ScrollFrame,
                 data
             )
-            self.NewTable.pack(side = tk.TOP, expand = tk.FALSE)
+            self.NewTable.pack(side = tk.TOP, expand = tk.TRUE)
             
 
 
