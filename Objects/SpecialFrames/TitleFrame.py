@@ -33,15 +33,15 @@ class TitleFrame(tk.Frame):
             fg = title_fg
         )
 
-        self.TitleLabel.pack(expand = True, fill = tk.BOTH)
+        self.TitleLabel.pack(side = "top", fill = tk.X)
 
         self.MainFrame = tk.Frame(
             self,
-            bg = main_bg
+            bg = main_bg,
         )
 
-        self.TitleFrame.pack(side = "top", fill = tk.BOTH)
-        self.MainFrame.pack(side = "top", fill = tk.BOTH, pady = 5, padx = 5)
+        self.TitleFrame.pack(side = "top", fill = tk.X)
+        self.MainFrame.pack(side = "top", fill = tk.BOTH, expand = tk.TRUE, pady = 5, padx = 5)
 
     def add_scroll_region(self, method, **kwargs):
         self.ScrollFrame = ScrollableFrame(self.MainFrame)

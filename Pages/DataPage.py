@@ -1,73 +1,45 @@
 import tkinter as tk
 import pandas as pd
 from Data.data_sets import data_sets
-from Objects.Table import Table
-from Pages.DataTablePage import DataTablePage
-from Pages.DataChartPage import DataChartPage
+from Objects.SpecialFrames.TitleFrame import TitleFrame
+from Objects.Tables.TableObject import TableObject
 from Misc.constants import *
 
-class DataPage(tk.Frame):
+class DataPage(TitleFrame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        
+        TitleFrame.__init__(self, parent)
+
+        self.active_tables = 0
+
         self.BackBtn = tk.Button(
-            self,
+            self.TitleFrame,
             fg = "black",
             text = "<- Back",
-            bg = "grey",
+            bg = "grey15",
+            highlightbackground = "grey15",
             command = lambda: controller.show_frame("Root")
         )
 
-        self.DataChoice = tk.StringVar(self)
-        self.DataChoice.set("select data")
-        self.DataOptions = [ds for ds in list(data_sets.keys())]
-        
-        self.DataOptionMenu = tk.OptionMenu(
-            self,
-            self.DataChoice,
-            "-- select data --",
-            *self.DataOptions
-        )
+        self.add_scroll_region("pack", side = tk.TOP, fill = tk.BOTH, expand = tk.TRUE)
 
-        self.TableViewBtn = tk.Button(
-            self,
-            text = "Table View",
-            bg = "grey",
+        self.AddTableBtn = tk.Button(
+            self.ScrollFrame.ScrollFrame,
+            text = "+",
             fg = "black",
-            command = lambda: self.raise_table_page()
+            command = lambda: self.add_table()
         )
 
-        self.ChartViewBtn = tk.Button(
-            self,
-            text = "Chart View",
-            bg = "grey",
-            fg = "black",
-            command = lambda: self.raise_chart_page()
-        )
-
-        self.ChartPage = DataChartPage(self)
-
-        self.TablePage = DataTablePage(self)
-        
         self.BackBtn.grid(row = 0, column = 0)
-        self.DataOptionMenu.grid(row = 1, column = 0)
-        self.TableViewBtn.grid(row = 2, column = 0)
-        self.ChartViewBtn.grid(row = 2, column = 0)
-        self.TablePage.grid(row = 5, column = 1)
+        self.AddTableBtn.grid(row = 0, column = 0)
 
-    def raise_chart_page(self):
-        try:
-            self.TablePage.grid_forget()
-            self.ChartPage.grid(row = 5, column = 1)
-            self.TableViewBtn.lift()
-        except:
-            self.ChartPage.grid(row = 5, column = 1)
-            self.TableViewBtn.lift()
+    def add_table(self):
+        self.AddTableBtn.grid_forget()
+        self.AddTableBtn.grid(row = 0, column = 0)
 
-    def raise_table_page(self):
-        self.ChartPage.grid_forget()
-        self.TablePage.grid(row = 5, column = 1)
-        self.ChartViewBtn.lift()
+        self.NewTable = TableObject(self.ScrollFrame.ScrollFrame)
+        self.NewTable.grid(row = self.active_tables, column = 0)
+
+        self.active_tables += 1  
         
         
 

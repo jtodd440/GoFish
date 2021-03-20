@@ -1,12 +1,10 @@
 import tkinter as tk
-from Misc.constants import *
-from Objects.Plots.PlotTypes.Plot import Plot
-from Objects.Plots.PlotSettings import PlotSettings
 from Objects.SpecialFrames.TitleFrame import TitleFrame
 from Data.data_sets import data_sets
+from Misc.constants import *
 
 class InfoObject(tk.Frame):
-    def __init__(self, parent, out_w = 100, out_h = 100, **kwargs):
+    def __init__(self, parent, **kwargs):
         TitleFrame.__init__(self, parent, **kwargs)
         self.parent = parent
 
@@ -22,10 +20,9 @@ class InfoObject(tk.Frame):
             self.MainFrame,
             title_text = "Output",
             title_bg = "LightCyan2",
-            main_bg = "LightCyan4",
-            width = out_w,
-            height = out_h
+            main_bg = "LightCyan4"
         )
+
 
         self.SettingsFrame = TitleFrame(
             self.MainFrame,
