@@ -1,21 +1,22 @@
 import tkinter as tk
 from Misc.constants import *
-from Objects.Plots.PlotTypes.Scatter import ScatterPlot
-from Objects.Plots.PlotTypes.PlotTypes import Types
 from Objects.SpecialFrames.TitleFrame import TitleFrame
 from Objects.InfoObject import InfoObject
+from Objects.Tables.Table import Table
 from Data.data_sets import data_sets
 
-class PlotObject(InfoObject):
+class TableObject(InfoObject):
     def __init__(self, parent, **kwargs):
-        InfoObject.__init__(self, parent, title_text = "Plot", **kwargs)
+        InfoObject.__init__(self, parent, title_text = "Table", **kwargs)
         
         self.parent = parent
 
+        self.OutputFrame.add_scroll_region("pack", side = tk.TOP, expand = tk.FALSE)
+
         self.FormatFrame = tk.Frame(
-            self.OutputFrame.MainFrame,
-            width = 500,
-            height = 400
+            self.OutputFrame.ScrollFrame,
+            width = 400,
+            height = 600
         )
         self.FormatFrame.pack()
 
@@ -30,6 +31,7 @@ class PlotObject(InfoObject):
         self.DataChoice = tk.StringVar(self.SettingsFrame.MainFrame)
         self.DataChoice.set("select data")
         self.DataChoice.trace("r", self.update_data_dropdown)
+        self.DataChoice.trace("w", self.show_table)
         
         self.data_options = [ds for ds in list(data_sets.keys())]
 
@@ -38,26 +40,6 @@ class PlotObject(InfoObject):
             self.DataChoice,
             "-- select data --",
             *self.data_options
-        )
-
-        self.GraphTypeLabel = tk.Label(
-            self.SettingsFrame.MainFrame,
-            text = "Plot Type",
-            fg = "black",
-            bg = "grey",
-            font = LABEL_FONT
-        )
-
-        self.graph_type_options = [gt for gt in list(Types.keys())]
-
-        self.GraphTypeChoice = tk.StringVar(self.SettingsFrame.MainFrame)
-        self.GraphTypeChoice.set(self.graph_type_options[0])
-        self.GraphTypeChoice.trace("w", self.update_params)
-
-        self.GraphTypeOptionMenu = tk.OptionMenu(
-            self.SettingsFrame.MainFrame,
-            self.GraphTypeChoice,
-            *self.graph_type_options
         )
 
         self.ParametersFrame = TitleFrame(
@@ -70,30 +52,22 @@ class PlotObject(InfoObject):
 
         self.ParametersFrame.add_scroll_region("pack", side = tk.TOP)
 
-        self.ShowPlotBtn = tk.Button(
+        self.ResultBtn = tk.Button(
             self.SettingsFrame.MainFrame,
-            text = "Plot",
+            text = "Result",
             fg = "black",
             bg = "grey",
             highlightbackground = "grey",
-            command = lambda: self.show_plot()
+            command = lambda: self.show_table()
         )
         
         self.DataOptionLabel.grid(row = 1, column = 0, padx = 10, sticky = tk.W, pady = 5)
         self.DataOptionMenu.grid(row = 1, column = 0)
-        self.GraphTypeLabel.grid(row = 2, column = 0, padx = 10, sticky = tk.W, pady = 5)
-        self.GraphTypeOptionMenu.grid(row = 2, column = 0)
         self.ParametersFrame.grid(row = 3, column = 0)
-        self.ShowPlotBtn.grid(row = 5, column = 0, pady = 10)
+        self.ResultBtn.grid(row = 5, column = 0, pady = 10)
 
-    def show_plot(self):
-        try:
-            self.FormatFrame.destroy()
-            self.Plot.show_plot()
-        except:
-            data = self.DataChoice.get()
-            self.Plot = ScatterPlot(self.OutputFrame.MainFrame, data, self.ParametersFrame.ScrollFrame)
-            self.Plot.show_plot()
+    def result(self):
+        print("hi")
 
     def update_data_dropdown(self, *args):
         menu_options = []
@@ -108,18 +82,24 @@ class PlotObject(InfoObject):
                     label = ds,
                     command = lambda: tk._setit(self.DataChoice, ds)
                     )
-
-    def update_params(self, *args):
-        try: 
-            self.Plot.destroy()
-            for child in self.ParametersFrame.ScrollFrame.ScrollFrame.winfo_children():
-                child.pack_forget()
+    
+    def show_table(self, *args):
+        try:
+            self.FormatFrame.destroy()
+            self.NewTable.destroy()
         except:
             pass
-
+        
         data = self.DataChoice.get()
-        self.Plot = ScatterPlot(self.OutputFrame.MainFrame, data, self.ParametersFrame.ScrollFrame)
-        self.Plot.update_params()
+        if data != "select data":
+            print("hi")
+            data = data_sets[f"{data}"]
+            self.NewTable = Table(
+                self.OutputFrame.ScrollFrame,
+                data
+            )
+            self.NewTable.pack(side = tk.TOP, expand = tk.FALSE)
+            
 
 
 

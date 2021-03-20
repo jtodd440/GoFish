@@ -2,17 +2,17 @@ import tkinter as tk
 from Misc.constants import *
 
 class Mean(tk.Frame):
-    def __init__(self, stat_master, parameter_master):
+    def __init__(self, stat_master, data, parameter_master):
         tk.Frame.__init__(self, stat_master)
 
         self.stat_master = stat_master
         self.parameter_master = parameter_master
     
-    def show_params(self):
+    def update_params(self):
         for i in range(20):
             for j in range(20):
                 tk.Label(
-                    self.parameter_master,
+                    self.parameter_master.ScrollFrame,
                     text = "Hi",
                     fg = "black"
                 ).grid(row = i, column = j)

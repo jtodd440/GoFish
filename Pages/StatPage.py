@@ -1,66 +1,42 @@
 import tkinter as tk
+from Objects.Stats.StatTypes.MOC import Mean
 from Objects.Stats.StatObject import StatObject
-from Objects.SpecialFrames.ScrollableFrame import ScrollableFrame
+from Objects.SpecialFrames.TitleFrame import TitleFrame
 from Misc.constants import *
 
-class StatPage(tk.Frame):
+class StatPage(TitleFrame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        TitleFrame.__init__(self, parent, title_text="Stats")
+        self.active_stats = 0
         
         self.parent = parent
-        self.active_stats = 0
-        self.add_buttons = []
 
-        self.TopBar = tk.Frame(
-            self,
-            bg = "grey",
-            highlightbackground = "black",
-            highlightthickness = 3
-        )
-
-        self.BackButton = tk.Button(
-            self.TopBar,
+        self.BackBtn = tk.Button(
+            self.TitleFrame,
             fg = "black",
             text = "<- Back",
-            bg = "grey",
+            highlightbackground = "grey15",
             command = lambda: controller.show_frame("Root")
         )
 
-        self.BackButton.pack(side = "top", anchor = "nw")
+        self.add_scroll_region("pack", side = tk.TOP, fill = tk.BOTH, expand = tk.TRUE)
 
-        self.StatCanvas = ScrollableFrame(self)
-
-        self.AddStatButton = tk.Button(
-            self.StatCanvas.ScrollFrame,
+        self.AddStatBtn = tk.Button(
+            self.ScrollFrame.ScrollFrame,
             text = "+",
             fg = "black",
             command = lambda: self.add_stat()
         )
         
-        self.AddStatButton.grid(row = 1, column = 0)
-        
-        self.TopBar.pack(side = "top", fill = "both")
-        self.StatCanvas.pack(side = "left", expand = tk.TRUE, fill = tk.BOTH)
-        
-        
+        self.BackBtn.pack(side = "top", anchor = "nw")
+        self.AddStatBtn.grid(row = 0, column = 0)
+
     def add_stat(self):
-        try:
-            for btn in self.add_buttons:
-                btn.destroy()
-        
-        except:
-            pass
+        self.AddStatBtn.grid_forget()
+        self.AddStatBtn.grid(row = 0, column = 0)
 
-        self.NewStat = StatObject(self.StatCanvas.ScrollFrame)
+        self.NewStat = StatObject(self.ScrollFrame.ScrollFrame)
         self.NewStat.grid(row = self.active_stats, column = 0)
-        for i in range(2):
-            AddButton = tk.Button(
-                    self.StatCanvas.ScrollFrame,
-                    text = "+",
-                    fg = "black",
-                    command = lambda: self.add_stat()
-                )
-            AddButton.grid(row = self.active_stats + 1 - i, column = i)
-            self.add_buttons.append(AddButton)
 
-        self.active_stats += 1   
+        self.active_stats += 1        
+        

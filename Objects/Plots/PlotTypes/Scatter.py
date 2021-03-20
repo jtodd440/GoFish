@@ -6,6 +6,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.figure import Figure
 from matplotlib import style
 style.use("ggplot")
+from Objects.SpecialFrames.ObjectLabelAlignmentFrame import ObjectLabelAlignmentFrame
 from Data.data_sets import data_sets
 import pandas as pd
 
@@ -19,38 +20,41 @@ class ScatterPlot(tk.Frame):
         self.Df = data_sets[f"{data_set}"]
         self.Columns = self.Df.columns
         
+        self.ParametersGroup = ObjectLabelAlignmentFrame(
+            self.parameter_master.ScrollFrame
+        )
+
         HorizontalLabel = tk.Label(
-            self.parameter_master,
+            self.ParametersGroup,
             text = "Horizontal Axis",
             fg = "black"
         )
-        self.HorizontalChoice = tk.StringVar(self.parameter_master)
+        self.HorizontalChoice = tk.StringVar(self.ParametersGroup)
         self.HorizontalChoice.set(f"{self.Columns[0]}")
         HorizontalAxis = tk.OptionMenu(
-            self.parameter_master,
+            self.ParametersGroup,
             self.HorizontalChoice,
             *self.Columns
         )
 
         VerticalLabel = tk.Label(
-            self.parameter_master,
+            self.ParametersGroup,
             text = "Vertical Axis",
             fg = "black"
         )
-        self.VerticalChoice = tk.StringVar(self.parameter_master)
+        self.VerticalChoice = tk.StringVar(self.ParametersGroup)
         self.VerticalChoice.set(f"{self.Columns[0]}")
         VerticalAxis = tk.OptionMenu(
-            self.parameter_master,
-            self.HorizontalChoice,
+            self.ParametersGroup,
+            self.VerticalChoice,
             *self.Columns
         )
-        self.Parameters = [HorizontalLabel, HorizontalAxis, VerticalLabel, VerticalAxis]
+        self.ParameterLabels = [HorizontalLabel, VerticalLabel]
+        self.ParmeterObjs = [HorizontalAxis, VerticalAxis]
 
-    def show_params(self):
-        row = 0
-        for i, param in enumerate(self.Parameters):
-            param.grid(row = row, column = i%2 )
-            row += i%2
+    def update_params(self):
+        self.ParametersGroup.add_pairs(self.ParameterLabels, self.ParmeterObjs)
+        self.ParametersGroup.pack()
 
     def show_plot(self):
         try:
