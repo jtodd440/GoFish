@@ -2,7 +2,7 @@ import tkinter as tk
 from Pages.DataPage import DataPage
 from Pages.GraphPage import GraphPage
 from Pages.Root import Root
-from Pages.ScriptingPage import ScriptingPage
+from Pages.GeoPage import GeoPage
 from Pages.StatPage import StatPage
 from Pages.StartPage import StartPage
 from Misc.constants import *
@@ -18,7 +18,7 @@ class DataApp(tk.Tk):
             GraphPage,
             StatPage,
             DataPage,
-            ScriptingPage
+            GeoPage
             )
 
         self.Container = tk.Frame(self)
