@@ -3,26 +3,19 @@ from tkinter import filedialog
 import gpxpy
 import pandas as pd
 import os
+from Objects.SpecialFrames.TitleFrame import TitleFrame
 from Data.data_sets import data_sets, add_data_set
 from Misc.constants import *
 
-class Root(tk.Frame):
+class Root(TitleFrame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        TitleFrame.__init__(self, parent, title_text = "Home")
         
-        self.NavigationFrame = tk.Frame(self, background = "grey")
+        self.NavigationFrame = TitleFrame(self.MainFrame, title_text = "Pages")
 
-        self.NavigationLabel = tk.Label(
-            self.NavigationFrame,
-            text = "Navigate to Page",
-            fg = "black",
-            bg = "grey",
-            font = BUTTON_FONT
-        )
-        
         self.ToGraphBtn = tk.Button(
             self.NavigationFrame,
-            text = "Graph Page",
+            text = "Plots",
             fg = "black",
             font = BUTTON_FONT,
             command = lambda: controller.show_frame("GraphPage")
@@ -30,7 +23,7 @@ class Root(tk.Frame):
 
         self.ToStatBtn = tk.Button(
             self.NavigationFrame,
-            text = "Stat Page",
+            text = "Stats",
             fg = "black",
             font = BUTTON_FONT,
             command = lambda: controller.show_frame("StatPage")
@@ -38,7 +31,7 @@ class Root(tk.Frame):
 
         self.ToDataBtn = tk.Button(
             self.NavigationFrame,
-            text = "See Data",
+            text = "Tables",
             fg = "black",
             font = BUTTON_FONT,
             command = lambda: controller.show_frame("DataPage")
@@ -52,77 +45,62 @@ class Root(tk.Frame):
             command = lambda: controller.show_frame("GeoPage")
         )
 
-        self.NavigationFrame.pack(side = "top")
-        self.NavigationLabel.pack(side = "top")
-        self.ToGraphBtn.pack(side = "left")
-        self.ToStatBtn.pack(side = "left")
-        self.ToDataBtn.pack(side = "left")
-        self.ToGeoBtn.pack(side = "left")
-        
-        self.MainFrame = tk.Frame(
-            self,
-            bg = "grey"
-        )
+        self.ToGraphBtn.pack(side = "top")
+        self.ToStatBtn.pack(side = "top")
+        self.ToDataBtn.pack(side = "top")
+        self.ToGeoBtn.pack(side = "top")
 
-        self.CommandFrame = tk.Frame(
+        self.CommandFrame = TitleFrame(
             self.MainFrame,
-            background = "grey",
-            width = 100,
-            height = 50
-        )
-
-        self.CommandLabel = tk.Label(
-            self.CommandFrame,
-            fg = "black",
-            bg = "grey",
-            text = "Commands",
-            font = LABEL_FONT
+            title_text= "Commands"
         )
 
         self.ImportDataBtn = tk.Button(
-            self.CommandFrame,
+            self.CommandFrame.MainFrame,
             text = "Import Data",
             fg = "black",
-            bg = "grey",
             font = BUTTON_FONT,
             command = lambda: self.import_button_function()
         )
 
-        self.EnvObjectsFrame = tk.Frame(
-            self.MainFrame,
-            background = "grey",
-            width = 300,
-            height = 50
-        )
-
-        self.EnvObjectsLabel = tk.Label(
-            self.EnvObjectsFrame,
-            text = "Environment\nObjects",
-            bg = "grey",
-            fg = "black",
-            font = LABEL_FONT
-        )
-
-        self.EnvDataLabel = tk.Label(
-            self.EnvObjectsFrame,
-            text = "Data Sets",
-            bg = "grey",
+        self.ClearEnvBtn = tk.Button(
+            self.CommandFrame.MainFrame,
+            text = "Clear Env",
             fg = "black",
             font = BUTTON_FONT
         )
 
-        self.MainFrame.pack(side = "top", pady = 5)
-        self.CommandFrame.pack(side = "right", padx = 70)
-        self.CommandLabel.pack(side = "top")
-        self.ImportDataBtn.pack(pady = 10)
-        self.EnvObjectsFrame.pack(side = "left", padx = 70)
-        self.EnvObjectsLabel.pack(side = "top")
-        self.EnvDataLabel.pack(pady = 5,)
+        self.ImportDataBtn.pack(side = tk.TOP)
+        self.ClearEnvBtn.pack(side = tk.TOP, fill = tk.X)
 
+        self.EnvObjectsFrame = TitleFrame(
+            self.MainFrame,
+            title_text = "Imported Objects"
+        )
+
+        self.DataSetsFrame = TitleFrame(
+            self.EnvObjectsFrame.MainFrame,
+            title_text = "Data Sets"
+        )
+
+        self.BaseMapsFrame = TitleFrame(
+            self.EnvObjectsFrame.MainFrame,
+            title_text = "Base Maps"
+        )
+
+        self.DataSetsFrame.add_scroll_region("pack", side = tk.TOP)
+        self.DataSetsFrame.pack(side = tk.TOP, padx = 5, pady = 5)
+        self.update_environment_objects()
+        self.BaseMapsFrame.add_scroll_region("pack", side = tk.TOP)
+        self.BaseMapsFrame.pack(side = tk.TOP)
+
+        self.NavigationFrame.grid(row = 0, column = 0, sticky = "nw")
+        self.CommandFrame.grid(row = 0, column = 1, pady = 5, padx = 5, sticky = "nw")
+        self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 5, pady = 5)
         
     def update_environment_objects(self):
         self.NewLabel = tk.Label(
-            self.EnvObjectsFrame,
+            self.DataSetsFrame.ScrollFrame.ScrollFrame,
             text = f"{list(data_sets.keys())[len(data_sets.keys()) - 1]}",
             bg = "grey",
             fg = "black"
