@@ -13,7 +13,10 @@ from Objects.SpecialFrames.AddPopUp import AddPopUp
 class Report(TitleFrame):
     def __init__(self, parent, **kwargs):
         TitleFrame.__init__(self, parent, title_text = "Report", bg = "grey30", **kwargs)
-        self.add_scroll_region("pack", fill = tk.BOTH)
+        self.add_scroll_region("pack", fill = tk.BOTH, expand = tk.TRUE)
+        self.ScrollFrame.configure(background = "grey30")
+        self.ScrollFrame.Canvas.configure(background = "grey30")
+        #self.ScrollFrame.pack_configure(expand = tk.TRUE, fill = tk.BOTH)
 
         self.AddBtn = tk.Button(
             self.ScrollFrame.ScrollFrame,
@@ -29,15 +32,15 @@ class Report(TitleFrame):
 
     def add_section(self):
         self.PopUp = AddPopUp()
-        self.PopUp.bind("<Destroy>", self.get_selected)
+        self.PopUp.TextBtn.bind("<Destroy>", self.get_selected)
 
     def get_selected(self, *args):
         self.NewSectionType = self.PopUp.selected
 
         self.NewSection = ReportSection(
             self.ScrollFrame.ScrollFrame,
-            section_type = self.NewSectionType
+            section_type = self.NewSectionType,
         )
-        self.NewSection.pack(side = tk.TOP, fill = tk.X, expand = tk.TRUE, anchor = "nw")
+        self.NewSection.pack(side = tk.TOP, fill = tk.X, expand = tk.TRUE, anchor = "n")
         self.AddBtn.pack_forget()
         self.AddBtn.pack(side = "top")

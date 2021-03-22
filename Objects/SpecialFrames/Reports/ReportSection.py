@@ -6,6 +6,8 @@ class ReportSection(TitleFrame):
     def __init__(self, parent, section_type, **kwargs):
         TitleFrame.__init__(self, parent, **kwargs)
         self.TitleLabel.destroy()
+        self.MainFrame.configure(height = 100)
+        self.MainFrame.pack_configure(fill = tk.X)
 
         self.DeleteBtn = tk.Button(
             self.TitleFrame, 
@@ -35,7 +37,7 @@ class ReportSection(TitleFrame):
         
         self.DeleteBtn.pack(side = "left")
         self.TypeLabel.pack(side = "left")
-        self.SectionTitleEntry.pack(side = "left", padx = 5)
+        self.SectionTitleEntry.pack(side = "left", fill = tk.X, expand = tk.TRUE, padx = 5)
     
     def delete_section(self):
         self.destroy()
