@@ -81,3 +81,32 @@
 # tk.Frame(
 #     root,
 # )
+
+# ############################################################################################################
+import tkinter as tk
+from Objects.SpecialFrames.Reports.ReportSection import ReportSection
+from Objects.SpecialFrames.Reports.Report import Report
+from Objects.SpecialFrames.AddPopUp import AddPopUp
+
+root = tk.Tk()
+
+#ReportSection = ReportSection(root)
+#ReportSection.pack()
+
+#PopUp = AddPopUp()
+#PopUp.geometry("200x250")
+#PopUp.maxsize(200, 250)
+
+#def get_selected(event):
+#    print(PopUp.selected)
+#    return(PopUp.selected)
+
+#PopUp.bind('<Destroy>', get_selected)
+
+MyReport = Report(root)
+MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
+
+
+root.mainloop()
+
+
