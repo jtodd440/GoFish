@@ -19,8 +19,8 @@ class InfoObject(tk.Frame):
         self.OutputFrame = TitleFrame(
             self.MainFrame,
             title_text = "Output",
-            title_bg = "LightCyan2",
-            main_bg = "LightCyan4"
+            title_bg = "SteelBlue4",
+            main_bg = "grey30"
         )
 
 
@@ -30,8 +30,10 @@ class InfoObject(tk.Frame):
         )
         
         self.DeleteBtn.pack(side = tk.LEFT)
-        self.OutputFrame.grid(row = 1, column = 1, padx = 5, pady = 5)
-        self.SettingsFrame.grid(row = 1, column = 0, padx = 5, pady = 5, sticky = "nw")
+        #self.SettingsFrame.pack(side = tk.LEFT, anchor = tk.CENTER, pady = 5, padx = 5)
+        #self.OutputFrame.pack(anchor = tk.CENTER, pady = 5, padx = 5)
+        self.SettingsFrame.grid(row = 0, column = 0, sticky = tk.NSEW,  pady = 5, padx = 5)
+        self.OutputFrame.grid(row = 0, column = 1, sticky = tk.NSEW, pady = 5, padx = 5)
 
     def delete_plot(self):
         self.grid_forget()

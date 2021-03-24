@@ -15,9 +15,9 @@ class TitleFrame(tk.Frame):
         tk.Frame.__init__(
             self,
             parent,
-            highlightbackground = "black",
-            highlightcolor = "black",
-            highlightthickness = 2,
+            highlightbackground = "grey15",
+            highlightcolor = "grey15",
+            highlightthickness = 0.05,
             **kwargs
         )
 
@@ -37,11 +37,11 @@ class TitleFrame(tk.Frame):
 
         self.MainFrame = tk.Frame(
             self,
-            bg = main_bg,
+            bg = main_bg
         )
 
         self.TitleFrame.pack(side = "top", fill = tk.X)
-        self.MainFrame.pack(side = "top", fill = tk.BOTH, expand = tk.TRUE, pady = 5, padx = 5)
+        self.MainFrame.pack(side = "top", fill = tk.BOTH, expand = tk.TRUE, pady = 0, padx = 0, anchor = tk.CENTER)
 
     def add_scroll_region(self, method, **kwargs):
         self.ScrollFrame = ScrollableFrame(self.MainFrame)
