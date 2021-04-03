@@ -94,7 +94,7 @@ class Root(TitleFrame):
         self.BaseMapsFrame.add_scroll_region("pack", side = tk.TOP)
         self.BaseMapsFrame.grid(row = 0, column = 1, padx = 5, pady = 5)
 
-        self.NavigationFrame.grid(row = 0, column = 0, sticky = "nw")
+        self.NavigationFrame.grid(row = 0, column = 0, sticky = "nw", pady = 5, padx = 5)
         self.CommandFrame.grid(row = 0, column = 1, pady = 5, padx = 5, sticky = "nw")
         self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 5, pady = 5)
         

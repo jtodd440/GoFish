@@ -83,12 +83,12 @@
 # )
 
 # ############################################################################################################
-import tkinter as tk
-from Objects.SpecialFrames.Reports.ReportSection import ReportSection
-from Objects.SpecialFrames.Reports.Report import Report
-from Objects.SpecialFrames.AddPopUp import AddPopUp
+# import tkinter as tk
+# from Objects.SpecialFrames.Reports.ReportSection import ReportSection
+# from Objects.SpecialFrames.Reports.Report import Report
+# from Objects.SpecialFrames.AddPopUp import AddPopUp
 
-root = tk.Tk()
+# root = tk.Tk()
 
 #ReportSection = ReportSection(root)
 #ReportSection.pack()
@@ -103,10 +103,18 @@ root = tk.Tk()
 
 #PopUp.bind('<Destroy>', get_selected)
 
-MyReport = Report(root)
-MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
+# MyReport = Report(root)
+# MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
 
+# root.mainloop()
 
-root.mainloop()
+########################## NewPopUp #########################
+import tkinter as tk
+from Objects.SpecialFrames.NewPopUp import NewPopUp
 
+Root = tk.Tk()
+
+PopUp = NewPopUp()
+
+Root.mainloop()
 
