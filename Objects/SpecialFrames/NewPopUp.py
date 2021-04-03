@@ -6,28 +6,25 @@ class NewPopUp(AddPopUp):
     def __init__(self):
         super().__init__()
 
-        ReportBtn = tk.Button(
+        self.ReportBtn = tk.Button(
             self.MainFrame,
             text = "Report",
             fg = "black",
             highlightbackground = "slate blue",
-            command = lambda: self.on_click()
+            command = lambda: self.on_click("Report")
         )
 
-        DashboardBtn = tk.Button(
+        self.DashboardBtn = tk.Button(
             self.MainFrame,
             text = "Dashboard",
             fg = "black",
             highlightbackground = "slate blue",
-            command = lambda: self.on_click()
+            command = lambda: self.on_click("Dashboard")
         )
 
         for child in self.MainFrame.winfo_children():
             child.pack_forget()
 
-        ReportBtn.pack(side = "top")
-        DashboardBtn.pack(side = "top")
-
-        for child in self.MainFrame.winfo_children():
-            child.pack(side = "top")
+        self.ReportBtn.pack(side = "top")
+        self.DashboardBtn.pack(side = "top")
         

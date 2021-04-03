@@ -4,14 +4,34 @@ import gpxpy
 import pandas as pd
 import os
 from Objects.SpecialFrames.TitleFrame import TitleFrame
+from Objects.SpecialFrames.NewPopUp import NewPopUp
+from Objects.SpecialFrames.Reports.Report import Report
 from Data.data_sets import data_sets, add_data_set
 from Misc.constants import *
 
 class Root(TitleFrame):
     def __init__(self, parent, controller):
         TitleFrame.__init__(self, parent, title_text = "Home")
+
+        self.LeftBar = TitleFrame(
+            self.MainFrame
+        )
+
+        self.NewBtn = tk.Button(
+            self.LeftBar.MainFrame,
+            text = "New",
+            fg = "black",
+            command = lambda: self.open_new()
+        )
+
+        self.OpenButton = tk.Button(
+            self.LeftBar.MainFrame,
+            text = "Open",
+            fg = "black",
+            command = lambda: self.open_recent()
+        )
         
-        self.NavigationFrame = TitleFrame(self.MainFrame, title_text = "Pages")
+        self.NavigationFrame = TitleFrame(self.LeftBar.MainFrame, title_text = "Pages")
 
         self.ToGraphBtn = tk.Button(
             self.NavigationFrame,
@@ -51,7 +71,7 @@ class Root(TitleFrame):
         self.ToGeoBtn.pack(side = "top")
 
         self.CommandFrame = TitleFrame(
-            self.MainFrame,
+            self.LeftBar.MainFrame,
             title_text= "Commands"
         )
 
@@ -72,6 +92,14 @@ class Root(TitleFrame):
 
         self.ImportDataBtn.pack(side = tk.TOP)
         self.ClearEnvBtn.pack(side = tk.TOP, fill = tk.X)
+
+        self.SettingsBtn = tk.Button(
+            self.LeftBar.MainFrame,
+            text = "Settings",
+            fg = "black"
+        )
+
+        self.SettingsBtn.pack(side = "bottom")
 
         self.EnvObjectsFrame = TitleFrame(
             self.MainFrame,
@@ -94,8 +122,12 @@ class Root(TitleFrame):
         self.BaseMapsFrame.add_scroll_region("pack", side = tk.TOP)
         self.BaseMapsFrame.grid(row = 0, column = 1, padx = 5, pady = 5)
 
-        self.NavigationFrame.grid(row = 0, column = 0, sticky = "nw", pady = 5, padx = 5)
-        self.CommandFrame.grid(row = 0, column = 1, pady = 5, padx = 5, sticky = "nw")
+        self.NewBtn.pack(side = tk.TOP, pady = 5, padx = 5)
+        self.OpenButton.pack(side = tk.TOP, pady = 5, padx = 5)
+        self.NavigationFrame.pack(side = tk.TOP, pady = 5, padx = 5)
+        self.CommandFrame.pack(side = tk.TOP, pady = 5, padx = 5)
+        
+        self.LeftBar.grid(row = 0, column = 0, rowspan = 10, sticky = tk.NW, pady = 5, padx = 5)
         self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 5, pady = 5)
         
     def update_environment_objects(self):
@@ -128,3 +160,18 @@ class Root(TitleFrame):
         f = os.path.basename(os.path.normpath(f))
         add_data_set(f, df)
         self.update_environment_objects()
+    
+    def open_new(self):
+        self.OpenNewPopUp = NewPopUp()
+        self.OpenNewPopUp.DashboardBtn.bind("<Destroy>", self.get_selected)
+
+    def get_selected(self, *args):
+        self.NewType = self.OpenNewPopUp.selected
+        NewWindow = tk.Tk()
+
+        if self.NewType == "Report":
+            self.Report = Report(NewWindow)
+            self.Report.pack(fill = tk.BOTH, expand = tk.TRUE)
+
+        if self.NewType == "Dashboard":
+            print("coming soon")
