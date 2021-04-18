@@ -134,13 +134,23 @@
 # root.mainloop()
 
 ########################## Image Button #########################
+# import tkinter as tk
+# from Objects.ImageButton import ImageButton
+# from Misc.constants import *
+
+# root = tk.Tk()
+
+# Btn = ImageButton(root, GEO_IMG)
+# Btn.pack()
+
+# root.mainloop()
+
+########################## PlayGround Class #########################
 import tkinter as tk
-from Objects.ImageButton import ImageButton
-from Misc.constants import *
+from Objects.SpecialFrames.PlayGround import PlayGroundPage
 
 root = tk.Tk()
 
-Btn = ImageButton(root, GEO_IMG)
-Btn.pack()
-
+PlotPage = PlayGroundPage(root, root, "Plot")
+PlotPage.pack(fill = tk.BOTH, expand = tk.TRUE)
 root.mainloop()
