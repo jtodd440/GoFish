@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from tkinter import filedialog
 import gpxpy
 import pandas as pd
@@ -7,15 +8,17 @@ from Objects.SpecialFrames.TitleFrame import TitleFrame
 from Objects.SpecialFrames.NewPopUp import NewPopUp
 from Objects.SpecialFrames.Reports.Report import Report
 from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
+from Objects.ImageButton import ImageButton
 from Data.data_sets import data_sets, add_data_set
 from Misc.constants import *
 
 class Root(TitleFrame):
     def __init__(self, parent, controller):
-        TitleFrame.__init__(self, parent, title_text = "Home")
+        TitleFrame.__init__(self, parent, title_text = "Home", main_bg = "SlateBlue4")
 
         self.LeftBar = TitleFrame(
-            self.MainFrame
+            self.MainFrame,
+            title_text = ""
         )
 
         self.NewBtn = tk.Button(
@@ -34,35 +37,27 @@ class Root(TitleFrame):
         
         self.NavigationFrame = TitleFrame(self.LeftBar.MainFrame, title_text = "Pages")
 
-        self.ToGraphBtn = tk.Button(
+        self.ToGraphBtn = ImageButton(
             self.NavigationFrame,
-            text = "Plots",
-            fg = "black",
-            font = BUTTON_FONT,
+            image = PLOT_IMG,
             command = lambda: controller.show_frame("GraphPage")
         )
 
-        self.ToStatBtn = tk.Button(
+        self.ToStatBtn = ImageButton(
             self.NavigationFrame,
-            text = "Stats",
-            fg = "black",
-            font = BUTTON_FONT,
+            image = MATH_IMG,
             command = lambda: controller.show_frame("StatPage")
         )
 
-        self.ToDataBtn = tk.Button(
+        self.ToDataBtn = ImageButton(
             self.NavigationFrame,
-            text = "Tables",
-            fg = "black",
-            font = BUTTON_FONT,
+            image = TABLE_IMG,
             command = lambda: controller.show_frame("DataPage")
         )
-
-        self.ToGeoBtn = tk.Button(
+        
+        self.ToGeoBtn = ImageButton(
             self.NavigationFrame,
-            text = "Geo",
-            fg = "black",
-            font = BUTTON_FONT,
+            image = GEO_IMG,
             command = lambda: controller.show_frame("GeoPage")
         )
 
@@ -76,8 +71,9 @@ class Root(TitleFrame):
             title_text= "Commands"
         )
 
-        self.ImportDataBtn = tk.Button(
+        self.ImportDataBtn = ImageButton(
             self.CommandFrame.MainFrame,
+            image = GEO_IMG,
             text = "Import Data",
             fg = "black",
             font = BUTTON_FONT,
@@ -86,6 +82,7 @@ class Root(TitleFrame):
 
         self.ClearEnvBtn = tk.Button(
             self.CommandFrame.MainFrame,
+            image = GEO_IMG,
             text = "Clear Env",
             fg = "black",
             font = BUTTON_FONT
@@ -94,13 +91,12 @@ class Root(TitleFrame):
         self.ImportDataBtn.pack(side = tk.TOP)
         self.ClearEnvBtn.pack(side = tk.TOP, fill = tk.X)
 
-        self.SettingsBtn = tk.Button(
+        self.SettingsBtn = ImageButton(
             self.LeftBar.MainFrame,
-            text = "Settings",
-            fg = "black"
+            image = SETTINGS_IMG
         )
 
-        self.SettingsBtn.pack(side = "bottom")
+        self.SettingsBtn.pack(side = "bottom", pady = 50)
 
         self.EnvObjectsFrame = TitleFrame(
             self.MainFrame,
@@ -121,15 +117,15 @@ class Root(TitleFrame):
         self.DataSetsFrame.grid(row = 0, column = 0, padx = 5, pady = 5)
         self.update_environment_objects()
         self.BaseMapsFrame.add_scroll_region("pack", side = tk.TOP)
-        self.BaseMapsFrame.grid(row = 0, column = 1, padx = 5, pady = 5)
+        self.BaseMapsFrame.grid(row = 1, column = 0, padx = 5, pady = 5)
 
         self.NewBtn.pack(side = tk.TOP, pady = 5, padx = 5)
         self.OpenButton.pack(side = tk.TOP, pady = 5, padx = 5)
         self.NavigationFrame.pack(side = tk.TOP, pady = 5, padx = 5)
         self.CommandFrame.pack(side = tk.TOP, pady = 5, padx = 5)
         
-        self.LeftBar.grid(row = 0, column = 0, rowspan = 10, sticky = tk.NW, pady = 5, padx = 5)
-        self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 5, pady = 5)
+        self.LeftBar.grid(row = 0, column = 0, rowspan = 10, sticky = tk.NW, pady = 10, padx = 50)
+        self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 50, pady = 10)
         
     def update_environment_objects(self):
         self.NewLabel = tk.Label(

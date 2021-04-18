@@ -118,17 +118,29 @@
 
 # Root.mainloop()
 
-########################## Dashbaords #########################
+# ########################## Dashbaords #########################
+# import tkinter as tk
+# from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
+# from Objects.SpecialFrames.Reports.Report import Report
+
+# root = tk.Tk()
+
+# # MyReport = Report(root)
+# # MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
+
+# MyDB = Dashboard(root)
+# MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
+
+# root.mainloop()
+
+########################## Image Button #########################
 import tkinter as tk
-from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
-from Objects.SpecialFrames.Reports.Report import Report
+from Objects.ImageButton import ImageButton
+from Misc.constants import *
 
 root = tk.Tk()
 
-# MyReport = Report(root)
-# MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
-
-MyDB = Dashboard(root)
-MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
+Btn = ImageButton(root, GEO_IMG)
+Btn.pack()
 
 root.mainloop()
