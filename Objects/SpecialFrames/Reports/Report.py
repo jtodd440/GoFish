@@ -12,10 +12,11 @@ from Objects.SpecialFrames.AddPopUp import AddPopUp
 
 class Report(TitleFrame):
     def __init__(self, parent, **kwargs):
-        TitleFrame.__init__(self, parent, title_text = "Report", bg = "dark slate blue", **kwargs)
+        TitleFrame.__init__(self, parent, title_text = "Report", main_bg = "SkyBlue4", bg = "SkyBlue4", **kwargs)
         self.add_scroll_region("pack", fill = tk.BOTH, expand = tk.TRUE)
-        self.ScrollFrame.ScrollFrame.configure(bg = "dark slate blue")
-        self.ScrollFrame.Canvas.configure(bg = "dark slate blue")
+        self.ScrollFrame.ScrollFrame.configure(bg = "SkyBlue4")
+        self.ScrollFrame.configure(bg = "SkyBlue4")
+        self.ScrollFrame.Canvas.configure(bg = "SkyBlue4")
         #self.ScrollFrame.configure(background = "grey30")
         #self.ScrollFrame.Canvas.configure(background = "grey30")
         #self.ScrollFrame.pack_configure(expand = tk.TRUE, fill = tk.BOTH)
@@ -24,6 +25,7 @@ class Report(TitleFrame):
             self.ScrollFrame.ScrollFrame,
             text = "+",
             fg = "black",
+            highlightbackground = "SkyBlue4",
             command = lambda: self.add_section()
         )
 

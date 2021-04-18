@@ -12,7 +12,7 @@ class InfoObject(tk.Frame):
             self.TitleFrame,
             text = "X",
             fg = "black",
-            highlightbackground = "grey30",
+            highlightbackground = "grey15",
             command = lambda: self.delete_plot()
         )
 

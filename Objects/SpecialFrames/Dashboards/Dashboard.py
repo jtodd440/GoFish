@@ -14,24 +14,25 @@ from Backend.tkinterDnD import *
 
 class Dashboard(TitleFrame):
     def __init__(self, parent, **kwargs):
-        TitleFrame.__init__(self, parent, title_text = "Dashboard", bg = "dark slate blue", **kwargs)
+        TitleFrame.__init__(self, parent, title_text = "Dashboard", bg = "SkyBlue4", **kwargs)
 
         self.add_scroll_region("pack", fill = tk.BOTH, expand = tk.TRUE)
-        self.ScrollFrame.ScrollFrame.configure(bg = "dark slate blue", height = 1000, width = 1000)
-        self.ScrollFrame.Canvas.configure(bg = "dark slate blue")
+        self.ScrollFrame.ScrollFrame.configure(bg = "SkyBlue4", height = 1000, width = 1000)
+        self.ScrollFrame.configure(bg = "SkyBlue4")
+        self.ScrollFrame.Canvas.configure(bg = "SkyBlue4")
         #self.ScrollFrame.configure(background = "grey30")
         #self.ScrollFrame.Canvas.configure(background = "grey30")
         #self.ScrollFrame.pack_configure(expand = tk.TRUE, fill = tk.BOTH)
 
         self.AddBtn = tk.Button(
-            self.ScrollFrame.ScrollFrame,
+            self.TitleFrame,
             text = "+",
             fg = "black",
-            highlightbackground = "dark slate blue",
+            highlightbackground = "grey15",
             command = lambda: self.add_section()
         )
 
-        self.AddBtn.place(x = 0, y = 0, anchor = tk.NW)
+        self.AddBtn.pack(side = tk.LEFT)
 
         self.NewSectionType = "text"
 

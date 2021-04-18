@@ -118,17 +118,39 @@
 
 # Root.mainloop()
 
-########################## Dashbaords #########################
+# ########################## Dashbaords #########################
+# import tkinter as tk
+# from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
+# from Objects.SpecialFrames.Reports.Report import Report
+
+# root = tk.Tk()
+
+# # MyReport = Report(root)
+# # MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
+
+# MyDB = Dashboard(root)
+# MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
+
+# root.mainloop()
+
+########################## Image Button #########################
+# import tkinter as tk
+# from Objects.ImageButton import ImageButton
+# from Misc.constants import *
+
+# root = tk.Tk()
+
+# Btn = ImageButton(root, GEO_IMG)
+# Btn.pack()
+
+# root.mainloop()
+
+########################## PlayGround Class #########################
 import tkinter as tk
-from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
-from Objects.SpecialFrames.Reports.Report import Report
+from Objects.SpecialFrames.PlayGround import PlayGroundPage
 
 root = tk.Tk()
 
-# MyReport = Report(root)
-# MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
-
-MyDB = Dashboard(root)
-MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
-
+PlotPage = PlayGroundPage(root, root, "Plot")
+PlotPage.pack(fill = tk.BOTH, expand = tk.TRUE)
 root.mainloop()

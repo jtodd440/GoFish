@@ -1,10 +1,7 @@
 import tkinter as tk
-from Pages.DataPage import DataPage
-from Pages.GraphPage import GraphPage
-from Pages.Root import Root
-from Pages.GeoPage import GeoPage
-from Pages.StatPage import StatPage
+from Pages.Pages import *
 from Pages.StartPage import StartPage
+from Pages.Root import Root
 from Misc.constants import *
 
 class DataApp(tk.Tk):
