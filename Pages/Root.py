@@ -6,6 +6,7 @@ import os
 from Objects.SpecialFrames.TitleFrame import TitleFrame
 from Objects.SpecialFrames.NewPopUp import NewPopUp
 from Objects.SpecialFrames.Reports.Report import Report
+from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
 from Data.data_sets import data_sets, add_data_set
 from Misc.constants import *
 
@@ -167,6 +168,7 @@ class Root(TitleFrame):
 
     def get_selected(self, *args):
         self.NewType = self.OpenNewPopUp.selected
+        print(self.NewType)
         NewWindow = tk.Tk()
 
         if self.NewType == "Report":
@@ -174,4 +176,5 @@ class Root(TitleFrame):
             self.Report.pack(fill = tk.BOTH, expand = tk.TRUE)
 
         if self.NewType == "Dashboard":
-            print("coming soon")
+            self.Dashboard = Dashboard(NewWindow)
+            self.Dashboard.pack(fill = tk.BOTH, expand = tk.TRUE)

@@ -109,12 +109,26 @@
 # root.mainloop()
 
 ########################## NewPopUp #########################
+# import tkinter as tk
+# from Objects.SpecialFrames.NewPopUp import NewPopUp
+
+# Root = tk.Tk()
+
+# PopUp = NewPopUp()
+
+# Root.mainloop()
+
+########################## Dashbaords #########################
 import tkinter as tk
-from Objects.SpecialFrames.NewPopUp import NewPopUp
+from Objects.SpecialFrames.Dashboards.Dashboard import Dashboard
+from Objects.SpecialFrames.Reports.Report import Report
 
-Root = tk.Tk()
+root = tk.Tk()
 
-PopUp = NewPopUp()
+# MyReport = Report(root)
+# MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
 
-Root.mainloop()
+MyDB = Dashboard(root)
+MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
 
+root.mainloop()
