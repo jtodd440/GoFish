@@ -125,10 +125,10 @@ from Objects.SpecialFrames.Reports.Report import Report
 
 root = tk.Tk()
 
-MyReport = Report(root)
-MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
+# MyReport = Report(root)
+# MyReport.pack(fill = tk.BOTH, expand = tk.TRUE)
 
-# MyDB = Dashboard(root)
-# MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
+MyDB = Dashboard(root)
+MyDB.pack(fill = tk.BOTH, expand = tk.TRUE)
 
 root.mainloop()
