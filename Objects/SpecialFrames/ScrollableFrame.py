@@ -33,4 +33,4 @@ class ScrollableFrame(tk.Frame):
 
         self.VScrollBar.pack(side = "right", fill = tk.Y)
         self.HScrollBar.pack(side = "bottom", fill = tk.X)
-        self.Canvas.pack(side = tk.LEFT, fill = tk.BOTH, padx = 5, pady = 5, expand = tk.TRUE)
+        self.Canvas.pack(side = tk.LEFT, fill = tk.BOTH, expand = tk.TRUE)

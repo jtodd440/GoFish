@@ -1,5 +1,5 @@
 import tkinter as tk
-#from PIL import Image, ImageTks
+from PIL import Image, ImageTk
 from Misc.constants import *
 
 class StartPage(tk.Frame):
@@ -8,9 +8,16 @@ class StartPage(tk.Frame):
 
         self.PageLabel = tk.Label(
             self,
-            text = "Data App",
+            text = "GoFish",
             font = LARGE_FONT,
             fg = "black"
+        )
+
+        self.logo_img = Image.open(LOGO_IMG)
+        self.logo_img = ImageTk.PhotoImage(self.logo_img)
+        self.Logo = tk.Label(
+            self,
+            image = self.logo_img
         )
 
         self.StartBtn = tk.Button(
@@ -30,6 +37,7 @@ class StartPage(tk.Frame):
             fg = "black"
         )
         
-        self.PageLabel.pack(pady = 50)
-        self.StartBtn.pack()
+        self.PageLabel.pack(pady = 25)
+        self.Logo.pack(side = "top")
+        self.StartBtn.pack(pady = 10)
         self.TutorialBtn.pack()

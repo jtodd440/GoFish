@@ -14,8 +14,8 @@ from Misc.constants import *
 
 class Root(TitleFrame):
     def __init__(self, parent, controller):
-        TitleFrame.__init__(self, parent, main_bg = "SlateBlue4")
-        self.TitleFrame.destroy()
+        TitleFrame.__init__(self, parent, main_bg = "SkyBlue4")
+        self.TitleLabel.destroy()
 
         self.LeftBar = TitleFrame(
             self.MainFrame,
@@ -84,7 +84,8 @@ class Root(TitleFrame):
 
         self.EnvObjectsFrame = TitleFrame(
             self.MainFrame,
-            title_text = "Imported Objects"
+            title_text = " ",
+            main_bg = "grey30"
         )
 
         self.DataSetsFrame = TitleFrame(
@@ -133,14 +134,14 @@ class Root(TitleFrame):
 
         self.NewBtn.pack(side = tk.TOP, pady = 5, padx = 5)
         self.OpenButton.pack(side = tk.TOP, pady = 5, padx = 5)
-        self.ToGraphBtn.pack(side = "top")
-        self.ToStatBtn.pack(side = "top")
-        self.ToDataBtn.pack(side = "top")
-        self.ToGeoBtn.pack(side = "top")
+        self.ToGraphBtn.pack(side = "top", pady = 5, padx = 5)
+        self.ToStatBtn.pack(side = "top", pady = 5, padx = 5)
+        self.ToDataBtn.pack(side = "top", pady = 5, padx = 5)
+        self.ToGeoBtn.pack(side = "top", pady = 5, padx = 5)
         self.SettingsBtn.pack(side = "bottom", pady = 50)
         
-        self.LeftBar.grid(row = 0, column = 0, rowspan = 10, sticky = tk.NW, pady = 10, padx = 50)
-        self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 50, pady = 10)
+        self.LeftBar.grid(row = 0, column = 0, rowspan = 10, sticky = tk.NW, pady = 10, padx = 10)
+        self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 100, pady = 10)
         
     def update_environment_objects(self):
         self.NewLabel = tk.Label(

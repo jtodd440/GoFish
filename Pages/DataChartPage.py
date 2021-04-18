@@ -1,7 +1,7 @@
 import tkinter as tk
 import pandas as pd
 from Objects.Plots.PlotTypes.Plot import Plot
-from Objects.Table import Table
+from Objects.Tables.Table import Table
 from Data.data_sets import data_sets
 from Misc.constants import *
 
