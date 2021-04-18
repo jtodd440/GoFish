@@ -14,7 +14,8 @@ from Misc.constants import *
 
 class Root(TitleFrame):
     def __init__(self, parent, controller):
-        TitleFrame.__init__(self, parent, title_text = "Home", main_bg = "SlateBlue4")
+        TitleFrame.__init__(self, parent, main_bg = "SlateBlue4")
+        self.TitleFrame.destroy()
 
         self.LeftBar = TitleFrame(
             self.MainFrame,
@@ -25,6 +26,7 @@ class Root(TitleFrame):
             self.LeftBar.MainFrame,
             text = "New",
             fg = "black",
+            highlightbackground = "grey30",
             command = lambda: self.open_new()
         )
 
@@ -32,71 +34,53 @@ class Root(TitleFrame):
             self.LeftBar.MainFrame,
             text = "Open",
             fg = "black",
+            highlightbackground = "grey30",
             command = lambda: self.open_recent()
         )
         
-        self.NavigationFrame = TitleFrame(self.LeftBar.MainFrame, title_text = "Pages")
-
         self.ToGraphBtn = ImageButton(
-            self.NavigationFrame,
+            self.LeftBar.MainFrame,
             image = PLOT_IMG,
+            x = 60,
+            y = 60,
+            highlightbackground = "grey30",
             command = lambda: controller.show_frame("GraphPage")
         )
 
         self.ToStatBtn = ImageButton(
-            self.NavigationFrame,
+            self.LeftBar.MainFrame,
             image = MATH_IMG,
+            x = 60,
+            y = 60,
+            highlightbackground = "grey30",
             command = lambda: controller.show_frame("StatPage")
         )
 
         self.ToDataBtn = ImageButton(
-            self.NavigationFrame,
+            self.LeftBar.MainFrame,
             image = TABLE_IMG,
+            x = 60,
+            y = 60,
+            highlightbackground = "grey30",
             command = lambda: controller.show_frame("DataPage")
         )
         
         self.ToGeoBtn = ImageButton(
-            self.NavigationFrame,
+            self.LeftBar.MainFrame,
             image = GEO_IMG,
+            x = 60,
+            y = 60,
+            highlightbackground = "grey30",
             command = lambda: controller.show_frame("GeoPage")
         )
 
-        self.ToGraphBtn.pack(side = "top")
-        self.ToStatBtn.pack(side = "top")
-        self.ToDataBtn.pack(side = "top")
-        self.ToGeoBtn.pack(side = "top")
-
-        self.CommandFrame = TitleFrame(
-            self.LeftBar.MainFrame,
-            title_text= "Commands"
-        )
-
-        self.ImportDataBtn = ImageButton(
-            self.CommandFrame.MainFrame,
-            image = GEO_IMG,
-            text = "Import Data",
-            fg = "black",
-            font = BUTTON_FONT,
-            command = lambda: self.import_button_function()
-        )
-
-        self.ClearEnvBtn = tk.Button(
-            self.CommandFrame.MainFrame,
-            image = GEO_IMG,
-            text = "Clear Env",
-            fg = "black",
-            font = BUTTON_FONT
-        )
-
-        self.ImportDataBtn.pack(side = tk.TOP)
-        self.ClearEnvBtn.pack(side = tk.TOP, fill = tk.X)
-
         self.SettingsBtn = ImageButton(
             self.LeftBar.MainFrame,
-            image = SETTINGS_IMG
+            x = 70,
+            y = 70,
+            image = SETTINGS_IMG,
+            highlightbackground = "grey30"
         )
-
-        self.SettingsBtn.pack(side = "bottom", pady = 50)
 
         self.EnvObjectsFrame = TitleFrame(
             self.MainFrame,
@@ -113,16 +97,47 @@ class Root(TitleFrame):
             title_text = "Base Maps"
         )
 
+        self.ImportDataBtn = ImageButton(
+            self.EnvObjectsFrame.MainFrame,
+            image = IMPORT_IMG,
+            x = 40,
+            y = 40,
+            compound = tk.LEFT,
+            text = "Import Data",
+            fg = "black",
+            font = BUTTON_FONT,
+            highlightbackground = "grey30",
+            command = lambda: self.import_button_function()
+        )
+
+        self.ClearEnvBtn = ImageButton(
+            self.EnvObjectsFrame.MainFrame,
+            image = TRASH_IMG,
+            x = 40,
+            y = 40,
+            compound = tk.LEFT,
+            text = "Clear Env",
+            fg = "black",
+            highlightbackground = "grey30",
+            font = BUTTON_FONT
+        )
+
+        self.ImportDataBtn.grid(row = 0, column = 0, padx = 5, pady = 5)
+        self.ClearEnvBtn.grid(row = 1, column = 0, padx = 5, pady = 5)
+
         self.DataSetsFrame.add_scroll_region("pack", side = tk.TOP)
-        self.DataSetsFrame.grid(row = 0, column = 0, padx = 5, pady = 5)
+        self.DataSetsFrame.grid(row = 2, column = 0, padx = 5, pady = 5)
         self.update_environment_objects()
         self.BaseMapsFrame.add_scroll_region("pack", side = tk.TOP)
-        self.BaseMapsFrame.grid(row = 1, column = 0, padx = 5, pady = 5)
+        self.BaseMapsFrame.grid(row = 3, column = 0, padx = 5, pady = 5)
 
         self.NewBtn.pack(side = tk.TOP, pady = 5, padx = 5)
         self.OpenButton.pack(side = tk.TOP, pady = 5, padx = 5)
-        self.NavigationFrame.pack(side = tk.TOP, pady = 5, padx = 5)
-        self.CommandFrame.pack(side = tk.TOP, pady = 5, padx = 5)
+        self.ToGraphBtn.pack(side = "top")
+        self.ToStatBtn.pack(side = "top")
+        self.ToDataBtn.pack(side = "top")
+        self.ToGeoBtn.pack(side = "top")
+        self.SettingsBtn.pack(side = "bottom", pady = 50)
         
         self.LeftBar.grid(row = 0, column = 0, rowspan = 10, sticky = tk.NW, pady = 10, padx = 50)
         self.EnvObjectsFrame.grid(row = 0, column = 2, padx = 50, pady = 10)
