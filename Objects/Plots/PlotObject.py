@@ -87,13 +87,21 @@ class PlotObject(InfoObject):
         self.ShowPlotBtn.grid(row = 5, column = 0, pady = 10)
 
     def show_plot(self):
-        try:
+        try: 
+            
+            # for child in self.OutputFrame.MainFrame.winfo_children():
+            #     if "plot" in str(child):
+            #         child.destroy()
             self.FormatFrame.destroy()
             self.Plot.show_plot()
+
         except:
             data = self.DataChoice.get()
-            self.Plot = ScatterPlot(self.OutputFrame.MainFrame, data, self.ParametersFrame.ScrollFrame)
+            plot_type = Types[str(self.GraphTypeChoice.get())]   
+            self.Plot = plot_type(self.OutputFrame.MainFrame, data, self.ParametersFrame.ScrollFrame)
             self.Plot.show_plot()
+
+        
 
     def update_data_dropdown(self, *args):
         menu_options = []
@@ -113,13 +121,16 @@ class PlotObject(InfoObject):
         try: 
             self.Plot.destroy()
             for child in self.ParametersFrame.ScrollFrame.ScrollFrame.winfo_children():
-                child.pack_forget()
+                child.destroy()
         except:
             pass
 
-        data = self.DataChoice.get()
-        self.Plot = ScatterPlot(self.OutputFrame.MainFrame, data, self.ParametersFrame.ScrollFrame)
-        self.Plot.update_params()
-
+        try:
+            data = self.DataChoice.get()
+            plot_type = Types[str(self.GraphTypeChoice.get())]    
+            self.Plot = plot_type(self.OutputFrame.MainFrame, data, self.ParametersFrame.ScrollFrame)
+            self.Plot.update_params()
+        except:
+            pass
 
 

@@ -31,7 +31,7 @@ class ScatterPlot(tk.Frame):
         )
         self.HorizontalChoice = tk.StringVar(self.ParametersGroup)
         self.HorizontalChoice.set(f"{self.Columns[0]}")
-        HorizontalAxis = tk.OptionMenu(
+        self.HorizontalAxis = tk.OptionMenu(
             self.ParametersGroup,
             self.HorizontalChoice,
             *self.Columns
@@ -44,13 +44,13 @@ class ScatterPlot(tk.Frame):
         )
         self.VerticalChoice = tk.StringVar(self.ParametersGroup)
         self.VerticalChoice.set(f"{self.Columns[0]}")
-        VerticalAxis = tk.OptionMenu(
+        self.VerticalAxis = tk.OptionMenu(
             self.ParametersGroup,
             self.VerticalChoice,
             *self.Columns
         )
         self.ParameterLabels = [HorizontalLabel, VerticalLabel]
-        self.ParmeterObjs = [HorizontalAxis, VerticalAxis]
+        self.ParmeterObjs = [self.HorizontalAxis, self.VerticalAxis]
 
     def update_params(self):
         self.ParametersGroup.add_pairs(self.ParameterLabels, self.ParmeterObjs)

@@ -22,5 +22,10 @@ def get_saved_data():
     
     f = os.path.basename(os.path.normpath(f))
     add_data_set(f, df)
+    
+    f2 = "Data/ExampleData.csv"
+    df = pd.read_csv(f2)
+    f2 = os.path.basename(os.path.normpath(f2))
+    add_data_set(f2, df)
 
 get_saved_data()
