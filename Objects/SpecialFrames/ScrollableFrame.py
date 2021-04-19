@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 class ScrollableFrame(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
@@ -30,6 +31,7 @@ class ScrollableFrame(tk.Frame):
             "<Configure>",
             lambda e: self.Canvas.itemconfig(self.CanvasFrame, width = e.width)
         )
+
 
         self.VScrollBar.pack(side = "right", fill = tk.Y)
         self.HScrollBar.pack(side = "bottom", fill = tk.X)
