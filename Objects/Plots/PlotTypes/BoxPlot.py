@@ -10,7 +10,7 @@ from Objects.SpecialFrames.ObjectLabelAlignmentFrame import ObjectLabelAlignment
 from Data.data_sets import data_sets
 import pandas as pd
 
-class ScatterPlot(tk.Frame):
+class BoxPlot(tk.Frame):
     def __init__(self, plot_master, data_set, parameter_master):
         tk.Frame.__init__(self, plot_master)
         self.plot_master = plot_master
@@ -26,12 +26,12 @@ class ScatterPlot(tk.Frame):
 
         HorizontalLabel = tk.Label(
             self.ParametersGroup,
-            text = "Horizontal Axis",
+            text = "Groups",
             fg = "black"
         )
         self.HorizontalChoice = tk.StringVar(self.ParametersGroup)
         self.HorizontalChoice.set(f"{self.Columns[0]}")
-        self.HorizontalAxis = tk.OptionMenu(
+        HorizontalAxis = tk.OptionMenu(
             self.ParametersGroup,
             self.HorizontalChoice,
             *self.Columns
@@ -39,18 +39,18 @@ class ScatterPlot(tk.Frame):
 
         VerticalLabel = tk.Label(
             self.ParametersGroup,
-            text = "Vertical Axis",
+            text = "Height",
             fg = "black"
         )
         self.VerticalChoice = tk.StringVar(self.ParametersGroup)
         self.VerticalChoice.set(f"{self.Columns[0]}")
-        self.VerticalAxis = tk.OptionMenu(
+        VerticalAxis = tk.OptionMenu(
             self.ParametersGroup,
             self.VerticalChoice,
             *self.Columns
         )
         self.ParameterLabels = [HorizontalLabel, VerticalLabel]
-        self.ParmeterObjs = [self.HorizontalAxis, self.VerticalAxis]
+        self.ParmeterObjs = [HorizontalAxis, VerticalAxis]
 
     def update_params(self):
         self.ParametersGroup.add_pairs(self.ParameterLabels, self.ParmeterObjs)
@@ -65,10 +65,8 @@ class ScatterPlot(tk.Frame):
 
         except:
             pass
-
-        x = self.Df[f"{self.HorizontalChoice.get()}"]
-        y = self.Df[f"{self.VerticalChoice.get()}"]
-        self.a.scatter(x, y)
+        
+        self.Df.boxplot(column = [f"{self.VerticalChoice.get()}"], by = [f"{self.HorizontalChoice.get()}"], ax = self.a)
         self.canvas = FigureCanvasTkAgg(self.f, self.plot_master)
         self.canvas.draw()
         self.canvas.get_tk_widget().pack(

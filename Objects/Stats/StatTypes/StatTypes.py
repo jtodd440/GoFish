@@ -1,3 +1,3 @@
-from Objects.Stats.StatTypes.MOC import Mean
+from Objects.Stats.StatTypes.Summary import Summary
 
-Types = {"Mean":Mean}
+Types = {"Summary":Summary}

@@ -10,7 +10,7 @@ from Objects.SpecialFrames.ObjectLabelAlignmentFrame import ObjectLabelAlignment
 from Data.data_sets import data_sets
 import pandas as pd
 
-class ScatterPlot(tk.Frame):
+class LinePlot(tk.Frame):
     def __init__(self, plot_master, data_set, parameter_master):
         tk.Frame.__init__(self, plot_master)
         self.plot_master = plot_master
@@ -31,7 +31,7 @@ class ScatterPlot(tk.Frame):
         )
         self.HorizontalChoice = tk.StringVar(self.ParametersGroup)
         self.HorizontalChoice.set(f"{self.Columns[0]}")
-        self.HorizontalAxis = tk.OptionMenu(
+        HorizontalAxis = tk.OptionMenu(
             self.ParametersGroup,
             self.HorizontalChoice,
             *self.Columns
@@ -44,13 +44,13 @@ class ScatterPlot(tk.Frame):
         )
         self.VerticalChoice = tk.StringVar(self.ParametersGroup)
         self.VerticalChoice.set(f"{self.Columns[0]}")
-        self.VerticalAxis = tk.OptionMenu(
+        VerticalAxis = tk.OptionMenu(
             self.ParametersGroup,
             self.VerticalChoice,
             *self.Columns
         )
         self.ParameterLabels = [HorizontalLabel, VerticalLabel]
-        self.ParmeterObjs = [self.HorizontalAxis, self.VerticalAxis]
+        self.ParmeterObjs = [HorizontalAxis, VerticalAxis]
 
     def update_params(self):
         self.ParametersGroup.add_pairs(self.ParameterLabels, self.ParmeterObjs)
@@ -60,15 +60,14 @@ class ScatterPlot(tk.Frame):
         try:
             self.f = Figure(figsize= (5,4), dpi = 100)
             self.a = self.f.add_subplot(111)
-            self.canvas._tkcanvas.pack_forget()
             self.canvas._tkcanvas.destroy()
 
         except:
             pass
 
-        x = self.Df[f"{self.HorizontalChoice.get()}"]
-        y = self.Df[f"{self.VerticalChoice.get()}"]
-        self.a.scatter(x, y)
+        x = self.Df[str(self.HorizontalChoice.get())]
+        y = self.Df[str(self.VerticalChoice.get())]
+        self.a.plot(x, y)
         self.canvas = FigureCanvasTkAgg(self.f, self.plot_master)
         self.canvas.draw()
         self.canvas.get_tk_widget().pack(

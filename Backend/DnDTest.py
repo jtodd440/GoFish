@@ -1,0 +1,20 @@
+import tkinter
+from tkinterDnD import *
+
+tk = tkinter.Tk()
+tk.title("tkinterDnD")
+frame = tkinter.Frame(tk, bd=4, height=64, width=64, bg="red")
+frame.place(x=0,y=0)
+make_draggable(frame)
+label = tkinter.Label(frame, text="Hello", bg="red", wraplength=64, justify=tkinter.CENTER)
+label.config(highlightbackground="black")
+label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+make_draggable_component(label)
+frame = tkinter.Frame(tk, bd=4, height=64, width=64, bg="green")
+frame.place(x=0,y=0)
+make_draggable(frame)
+label = tkinter.Label(frame, text="World", bg="green", wraplength=64, justify=tkinter.CENTER)
+label.config(highlightbackground="black")
+label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+make_draggable_component(label)
+tk.mainloop() 
