@@ -145,12 +145,29 @@
 
 # root.mainloop()
 
+# ########################## PlayGround Class #########################
+# import tkinter as tk
+# from Objects.SpecialFrames.PlayGround import PlayGroundPage
+
+# root = tk.Tk()
+
+# PlotPage = PlayGroundPage(root, root, "Plot")
+# PlotPage.pack(fill = tk.BOTH, expand = tk.TRUE)
+# root.mainloop()
+
 ########################## PlayGround Class #########################
 import tkinter as tk
-from Objects.SpecialFrames.PlayGround import PlayGroundPage
+from Objects.Tables.Table import Table
+from Data.data_sets import data_sets
+df = data_sets["ExampleData.csv"]
 
 root = tk.Tk()
+frame1 = tk.Frame(root)
+frame2 = tk.Frame(root)
+frame1.pack(side = "top")
+frame2.pack(side = "top")
 
-PlotPage = PlayGroundPage(root, root, "Plot")
-PlotPage.pack(fill = tk.BOTH, expand = tk.TRUE)
+myTable = Table(frame1, frame2, df)
+myTable.make_table()
+
 root.mainloop()
