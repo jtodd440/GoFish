@@ -1,5 +1,5 @@
 # GoFish
-Using Rpi and OpenPlotter for purposes relating to commercial fishing
+Data dashboard for gpx files
 
 I use a raspberry pi running OpenPlotter OS as a chartplotter on my fishing vessel.
 In my final semester at university I was able to earn credit for directed study where I worked on using the pi for commercial fishing. 
